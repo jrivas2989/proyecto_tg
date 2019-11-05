@@ -11,11 +11,14 @@
                     </li>
 
                      <ul class="submenu">
-                        <li><a href="#">Casos recibidos<i class="icono derecha fa fa-chevron-down" aria-hidden="true"></i></a>
-                            <ul>
-                                <li><a href="#">Nuevos Casos</a></li>
-                                <li><a href="#">Mis casos</a></li>
-                             </ul>
+                        <li>
+                            <a href="#">Casos recibidos<i class="icono derecha fa fa-chevron-down" aria-hidden="true"></i>
+                            </a>
+                        <ul>
+                            <li><a href="tickets.php">Listado de Casos</a></li>
+                            <li><a href="#">Nuevos Casos</a></li>
+                            <li><a href="#">Mis casos</a></li>
+                         </ul>
 
                 </ul>
             </div>
