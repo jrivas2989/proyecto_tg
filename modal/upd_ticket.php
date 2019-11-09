@@ -12,7 +12,7 @@
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span>
                     </button>
-                    <h4 class="modal-title" id="myModalLabel"> Editar Ticket</h4>
+                    <h4 class="modal-title" id="myModalLabel"> Editar Caso</h4>
                 </div>
                 <div class="modal-body">
                     <form class="form-horizontal form-label-left input_mask" method="post" id="upd" name="upd">
@@ -45,7 +45,7 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Proyecto
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">area
                             </label>
                             <div class="col-md-9 col-sm-9 col-xs-12">
                                 <select class="form-control" name="project_id" required id="mod_project_id">
