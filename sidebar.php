@@ -8,6 +8,7 @@
                         <a href="users.php"><i class="fa fa-users"></i> Usuarios</a>
                     </li>
 
+<<<<<<< HEAD
                            
                          <!-- sidebar menu -->
                                       
@@ -35,6 +36,16 @@
 
                      
 
+=======
+                     <ul class="submenu">
+                        <li>
+                            <a href="#">Casos recibidos<i class="icono derecha fa fa-chevron-down" aria-hidden="true"></i>
+                            </a>
+                        <ul>
+                            <li><a href="tickets.php">Nuevo Caso</a></li>
+                         <li><a href="#">Mis casos</a></li>
+                         </ul>
+>>>>>>> c4b48e332786367578a6c60d4962042fbf9907a8
 
                 </ul>
             </div>
