@@ -15,7 +15,7 @@
                     ?>
                     <div class="x_panel">
                         <div class="x_title">
-                            <h2>Gastos</h2>
+                            <h2>Casos recibidos</h2>
                             <ul class="nav navbar-right panel_toolbox">
                                 <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                                 </li>
@@ -30,7 +30,7 @@
                             <div class="form-group row">
                                 <label for="q" class="col-md-2 control-label">Nombre/Asunto</label>
                                 <div class="col-md-4">
-                                    <input type="text" class="form-control" id="q" placeholder="Nombre del ticket" onkeyup='load(1);'>
+                                    <input type="text" class="form-control" id="q" placeholder="Nombre del caso" onkeyup='load(1);'>
                                 </div>
                                 <div class="col-md-3">
                                     <button type="button" class="btn btn-default" onclick='load(1);'>

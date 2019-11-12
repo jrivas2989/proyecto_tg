@@ -15,7 +15,7 @@
                     ?>
                     <div class="x_panel">
                         <div class="x_title">
-                            <h2>Categorias </h2>
+                            <h2>Usuario </h2>
                             <ul class="nav navbar-right panel_toolbox">
                                 <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                                 </li>
@@ -28,9 +28,9 @@
                         <!-- form search -->
                         <form class="form-horizontal" role="form" id="category_expence">
                             <div class="form-group row">
-                                <label for="q" class="col-md-2 control-label">Nombre</label>
+                                <label for="q" class="col-md-2 control-label">Nombre:</label>
                                 <div class="col-md-4">
-                                    <input type="text" class="form-control" id="q" placeholder="Nombre de la categoria" onkeyup='load(1);'>
+                                    <input type="text" class="form-control" id="q" placeholder="Nombre del usuario" onkeyup='load(1);'>
                                 </div>
                                 <div class="col-md-3">
                                     <button type="button" class="btn btn-default" onclick='load(1);'>

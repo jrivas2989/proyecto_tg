@@ -17,8 +17,20 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `ticketly`
+-- Base de datos: `Casos Recibidos`
 --
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `Site`
+--
+
+CREATE TABLE `site` (
+  `id` int(11) NOT NULL,
+  `name` varchar(200) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
 
 -- --------------------------------------------------------
 
@@ -42,12 +54,11 @@ CREATE TABLE `kind` (
   `name` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Volcado de datos para la tabla `kind`
+---- Volcado de datos para la tabla `kind`
 --
 
 INSERT INTO `kind` (`id`, `name`) VALUES
-(1, 'Ticket'),
+(1, 'caso'),
 (2, 'Bug'),
 (3, 'Sugerencia'),
 (4, 'Caracteristica');
@@ -105,6 +116,40 @@ INSERT INTO `status` (`id`, `name`) VALUES
 (3, 'Terminado'),
 (4, 'Cancelado');
 
+-- Volcado de datos para la tabla `site`
+
+INSERT INTO `site` (`id`, `name`) VALUES
+(1, 'Agueybana'),
+(2, 'Monte Flores'),
+(3, 'Bello Horizonte'),
+(4, 'Cervantes');
+(2, 'Cedro'),
+(3, 'Terminado'),
+(4, 'Cancelado');
+(2, 'En Desarrollo'),
+(3, 'Terminado'),
+(4, 'Cancelado');
+(2, 'En Desarrollo'),
+(3, 'Terminado'),
+(4, 'Cancelado');
+(2, 'En Desarrollo'),
+(3, 'Terminado'),
+(4, 'Cancelado');
+(2, 'En Desarrollo'),
+(3, 'Terminado'),
+(4, 'Cancelado');
+(2, 'En Desarrollo'),
+(3, 'Terminado'),
+(4, 'Cancelado');
+(2, 'En Desarrollo'),
+(3, 'Terminado'),
+(4, 'Cancelado');
+(2, 'En Desarrollo'),
+(3, 'Terminado'),
+(4, 'Cancelado');
+
+
+
 -- --------------------------------------------------------
 
 --
@@ -124,6 +169,7 @@ CREATE TABLE `ticket` (
   `category_id` int(11) DEFAULT NULL,
   `priority_id` int(11) NOT NULL DEFAULT '1',
   `status_id` int(11) NOT NULL DEFAULT '1'
+
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -185,6 +231,10 @@ ALTER TABLE `project`
 ALTER TABLE `status`
   ADD PRIMARY KEY (`id`);
 
+-- Indices de la tabla `site`
+--
+ALTER TABLE `site`
+  ADD PRIMARY KEY (`id`);
 --
 -- Indices de la tabla `ticket`
 --
@@ -196,6 +246,7 @@ ALTER TABLE `ticket`
   ADD KEY `kind_id` (`kind_id`),
   ADD KEY `category_id` (`category_id`),
   ADD KEY `project_id` (`project_id`);
+  ADD KEY `site` (`site_id`);
 
 --
 -- Indices de la tabla `user`
@@ -244,6 +295,9 @@ ALTER TABLE `user`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- Restricciones para tablas volcadas
+
+ALTER TABLE `site`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 
 --

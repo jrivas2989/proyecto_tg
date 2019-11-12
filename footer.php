@@ -1,7 +1,7 @@
  
                 <footer><!-- footer content -->
                     <div class="pull-right">
-                        This project is created using <a target="_blank" style="color: #0000ff" href="http://github.com/amnersaucedososa">Web Project Builder. </a>An online php code builder tool By <a style="color: #0000ff; text-decoration: underline;" target="_blank" href="http://github.com/amnersaucedososa">Abisoft</a>
+                        Proyecto realizado bajo software libre <a target="_blank" style="color: #0000ff" href="http://github.com/jrivas2989/proyecto_tg">Implementado para la empresa CPK Inversiones, C.A. </a>Realizado por: Jose Rivas <a style="color: #0000ff; text-decoration: underline;" target="_blank" href="https://github.com/jrivas2989/proyecto_tg"></a>
                     </div>
                     <div class="clearfix"></div>
                 </footer><!-- /footer content -->

@@ -16,21 +16,7 @@
                         <div class="tile-stats">
                           <div class="icon"><i class="fa fa-ticket"></i></div>
                           <div class="count"><?php echo mysqli_num_rows($TicketData) ?></div>
-                          <h3>Tickets Pendientes</h3>
-                        </div>
-                    </div>
-                    <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                        <div class="tile-stats">
-                          <div class="icon"><i class="fa fa-list-alt"></i></div>
-                          <div class="count"><?php echo mysqli_num_rows($ProjectData) ?></div>
-                          <h3>Proyectos</h3>
-                        </div>
-                    </div>
-                    <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                        <div class="tile-stats">
-                          <div class="icon"><i class="fa fa-th-list"></i></div>
-                          <div class="count"><?php echo mysqli_num_rows($CategoryData) ?></div>
-                          <h3>Categorias</h3>
+                          <h3>Casos Pendientes</h3>
                         </div>
                     </div>
                     <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
@@ -61,7 +47,7 @@
                         ?>    
                         <div class="x_panel">
                             <div class="x_title">
-                                <h2>Informacion personal</h2>
+                                <h2>Mi perfil</h2>
                                 <ul class="nav navbar-right panel_toolbox">
                                     <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                                     </li>

@@ -2,23 +2,39 @@
             <div class="menu_section">
                 <ul class="nav side-menu">
                     <li class="<?php if(isset($active1)){echo $active1;}?>">
-                        <a href="dashboard.php"><i class="fa fa-dashboard"></i> Atenciones</a>
+                        <a href="dashboard.php"><i class="fa fa-dashboard"></i> Panel Principal</a>
                     </li>
-
-                       
                        <li class="<?php if(isset($active6)){echo $active6;}?>">
                         <a href="users.php"><i class="fa fa-users"></i> Usuarios</a>
                     </li>
 
-                     <ul class="submenu">
-                        <li>
-                            <a href="#">Casos recibidos<i class="icono derecha fa fa-chevron-down" aria-hidden="true"></i>
-                            </a>
-                        <ul>
-                            <li><a href="tickets.php">Listado de Casos</a></li>
-                            <li><a href="#">Nuevos Casos</a></li>
-                            <li><a href="#">Mis casos</a></li>
-                         </ul>
+                           
+                         <!-- sidebar menu -->
+                                      
+                          <ul class="nav side-menu">
+                               <li><a><i class="fa fa-home"></i> Atenciones<span class="fa fa-chevron-down"></span></a>
+                                   <ul class="nav child_menu">
+                                     <li><a href="tickets.php">Nuevo caso</a></li>
+                                      <li><a href="tickets.php">Mis Casos</a></li>
+                                        </ul>
+                                        </li>
+
+                                   <li class="<?php if(isset($active3)){echo $active3;}?>">
+                               <a href="projects.php"><i class="fa fa-list-alt"></i> Mantenimientos</a>
+                                </li>
+
+                              <li class="<?php if(isset($active4)){echo $active4;}?>">
+                              <a href="categories.php"><i class="fa fa-align-left"></i> Operadores</a>
+                        </li>
+                                <li class="<?php if(isset($active5)){echo $active5;}?>">
+                                <a href="reports.php"><i class="fa fa-area-chart"></i> Estadisticas</a>
+                          </li>
+                          <li class="<?php if(isset($active5)){echo $active5;}?>">
+                        <a href="reports.php"><i class="fa fa-area-chart"></i> Consultas</a>
+                    </li>
+
+                     
+
 
                 </ul>
             </div>
