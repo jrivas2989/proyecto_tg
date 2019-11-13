@@ -29,7 +29,6 @@
                             </div>
                         </div>
                           <div class="form-group">
-<<<<<<< HEAD
                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Site:
                             </label> 
                             <div class="col-md-9 col-sm-9 col-xs-12">
@@ -43,9 +42,6 @@
                         </div>
                           <div class="form-group">
                             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Problema
-=======
-                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Tipo
->>>>>>> c4b48e332786367578a6c60d4962042fbf9907a8
                             </label>
                             <div class="col-md-9 col-sm-9 col-xs-12">
                                 <select class="form-control" name="kind_id" >

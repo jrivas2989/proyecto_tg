@@ -6,12 +6,8 @@
                     </li>
                        <li class="<?php if(isset($active6)){echo $active6;}?>">
                         <a href="users.php"><i class="fa fa-users"></i> Usuarios</a>
-                    </li>
-
-<<<<<<< HEAD
-                           
-                         <!-- sidebar menu -->
-                                      
+                    </li>                           
+                         <!-- sidebar menu -->                                      
                           <ul class="nav side-menu">
                                <li><a><i class="fa fa-home"></i> Atenciones<span class="fa fa-chevron-down"></span></a>
                                    <ul class="nav child_menu">
@@ -33,20 +29,6 @@
                           <li class="<?php if(isset($active5)){echo $active5;}?>">
                         <a href="reports.php"><i class="fa fa-area-chart"></i> Consultas</a>
                     </li>
-
-                     
-
-=======
-                     <ul class="submenu">
-                        <li>
-                            <a href="#">Casos recibidos<i class="icono derecha fa fa-chevron-down" aria-hidden="true"></i>
-                            </a>
-                        <ul>
-                            <li><a href="tickets.php">Nuevo Caso</a></li>
-                         <li><a href="#">Mis casos</a></li>
-                         </ul>
->>>>>>> c4b48e332786367578a6c60d4962042fbf9907a8
-
                 </ul>
             </div>
         </div><!-- /sidebar menu -->
