@@ -48,7 +48,7 @@
                     ?>
                     <section class="login_content">
                         <form action="action/login.php" method="post">
-                            <h1>Bienvenido SisWebReport </h1>
+                            <h1>Bienvenido</h1>
                             <h1>Inicie Sesión</h1>
                             <div>
                                 <input type="text" name="email" class="form-control" placeholder="Correo Electrónico" required />
@@ -65,7 +65,7 @@
                                 <div class="clearfix"></div>
                                 <br />
                                 <div>
-                                    <h1><i class="fa fa-ticket"></i> Sistema Web</h1>
+                                    <h1><i class="fa fa-ticket"></i>SisWebReport</h1>
                                     
                                 </div>
                             </div>

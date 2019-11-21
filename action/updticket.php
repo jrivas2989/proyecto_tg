@@ -23,9 +23,10 @@
 		$user_id = $_SESSION["user_id"];
 		$status_id = $_POST["status_id"];
 		$kind_id = $_POST["kind_id"];
+		$site_id = $_POST["site_id"];
 		$id=$_POST['mod_id'];
 
-		$sql = "update ticket set title=\"$title\",category_id=\"$category_id\",project_id=\"$project_id\",priority_id=\"$priority_id\",description=\"$description\",status_id=\"$status_id\",kind_id=\"$kind_id\",updated_at=NOW() where id=$id";
+		$sql = "update ticket set title=\"$title\",category_id=\"$category_id\",project_id=\"$project_id\",priority_id=\"$priority_id\",description=\"$description\",status_id=\"$status_id\",kind_id=\"$kind_id\",site_id=\"$site_id\"updated_at=NOW() where id=$id";
 
 		$query_update = mysqli_query($con,$sql);
 			if ($query_update){

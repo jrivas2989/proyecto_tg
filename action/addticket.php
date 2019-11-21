@@ -21,15 +21,16 @@
 		$user_id = $_SESSION["user_id"];
 		$status_id = $_POST["status_id"];
 		$kind_id = $_POST["kind_id"];
+		$site_id = $_POST["site_id"];
 		$created_at="NOW()";
 
 		// $user_id=$_SESSION['user_id'];
 
-		$sql="insert into ticket (title,description,category_id,project_id,priority_id,user_id,status_id,kind_id,created_at) value (\"$title\",\"$description\",\"$category_id\",\"$project_id\",$priority_id,$user_id,$status_id,$kind_id,$created_at)";
+		$sql="insert into ticket (title,description,category_id,project_id,priority_id,user_id,status_id,site_id,kind_id,created_at) value (\"$title\",\"$description\",\"$category_id\",\"$project_id\",\"$site_id\",$priority_id,$user_id,$status_id,$kind_id,$created_at,site_id)";
 
 		$query_new_insert = mysqli_query($con,$sql);
 			if ($query_new_insert){
-				$messages[] = "Tu ticket ha sido ingresado satisfactoriamente.";
+				$messages[] = "Tu caso asignado se ha sido ingresado satisfactoriamente.";
 			} else{
 				$errors []= "Lo siento algo ha salido mal intenta nuevamente.".mysqli_error($con);
 			}

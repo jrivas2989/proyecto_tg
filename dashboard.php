@@ -73,6 +73,7 @@
                                             <input type="text" id="last-name" name="email" class="form-control col-md-7 col-xs-12" value="<?php echo $email; ?>">
                                         </div>
                                     </div>
+                                    
 
                                     <br><br><br>
                                     <h2 style="padding-left: 50px">Cambiar Contraseña</h2>

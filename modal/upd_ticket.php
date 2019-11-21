@@ -4,6 +4,7 @@
     $statuses =mysqli_query($con, "select * from status");
     $kinds =mysqli_query($con, "select * from kind");
     $categories =mysqli_query($con, "select * from category");
+    $site =mysqli_query($con, "select * from site");
 ?>
     <!-- Modal -->
     <div class="modal fade bs-example-modal-lg-udp" tabindex="-1" role="dialog" aria-hidden="true">
@@ -17,11 +18,9 @@
                 <div class="modal-body">
                     <form class="form-horizontal form-label-left input_mask" method="post" id="upd" name="upd">
                         <div id="result2"></div>
-
                         <input type="hidden" name="mod_id" id="mod_id">
-
                         <div class="form-group">
-                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Tipo
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Tipo de problema
                             </label>
                             <div class="col-md-9 col-sm-9 col-xs-12">
                                 <select class="form-control" name="kind_id" required id="mod_kind_id">
@@ -44,20 +43,20 @@
                               <textarea name="description" id="mod_description" class="form-control col-md-7 col-xs-12" required></textarea>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">area
-                            </label>
+                         <div class="form-group">
+                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Site:
+                            </label> 
                             <div class="col-md-9 col-sm-9 col-xs-12">
-                                <select class="form-control" name="project_id" required id="mod_project_id">
+                                <select class="form-control" name="site_id" >
                                     <option selected="" value="">-- Selecciona --</option>
-                                      <?php foreach($projects as $p):?>
+                                      <?php foreach($site as $p):?>
                                         <option value="<?php echo $p['id']; ?>"><?php echo $p['name']; ?></option>
                                       <?php endforeach; ?>
                                 </select>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Categoria
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Operador
                             </label>
                             <div class="col-md-9 col-sm-9 col-xs-12">
                                 <select class="form-control" name="category_id" required id="mod_category_id">

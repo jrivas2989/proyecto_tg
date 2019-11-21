@@ -32,7 +32,7 @@
                                     <input type="text" class="form-control" id="q" placeholder="Nombre o Correo Electrónico" onkeyup='load(1);'>
                                 </div>
                                 <div class="col-md-3">
-                                    <button type="button" class="btn btn-default" onclick='load(1);'>
+                                 <button type="button" class="btn btn-default" onclick='load(1);'>
                                         <span class="glyphicon glyphicon-search" ></span> Buscar</button>
                                     <!-- <span id="loader"></span> -->
                                 </div>
