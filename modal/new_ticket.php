@@ -30,8 +30,25 @@
                         </div>
                          
                           <div class="form-group">
+<<<<<<< HEAD
                             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Tipo de Problema:
                              </label>
+=======
+                           <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Site:
+                            </label> 
+                            <div class="col-md-9 col-sm-9 col-xs-12">
+                                <select class="form-control" name="site" >
+                                    <option selected="" value="">-- Selecciona --</option>
+                                      <?php foreach($projects as $p):?>
+                                        <option value="<?php echo $p['id']; ?>"><?php echo $p['name']; ?></option>
+                                      <?php endforeach; ?>
+                                </select>
+                            </div>
+                        </div>
+                          <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Problema
+                            </label>
+>>>>>>> 8c4d074c34817d70818d9934768bba2b01219ce6
                             <div class="col-md-9 col-sm-9 col-xs-12">
                                 <select class="form-control" name="kind_id" >
                                       <?php foreach($kinds as $p):?>
