@@ -21,20 +21,12 @@
 		$user_id = $_SESSION["user_id"];
 		$status_id = $_POST["status_id"];
 		$kind_id = $_POST["kind_id"];
-<<<<<<< HEAD
-		$site_id = $_POST["site_id"];
-=======
 		$site_id = $_POST["site"];
->>>>>>> 8c4d074c34817d70818d9934768bba2b01219ce6
 		$created_at="NOW()";
 
 		// $user_id=$_SESSION['user_id'];
 
-<<<<<<< HEAD
-		$sql="insert into ticket (title,description,category_id,project_id,priority_id,user_id,status_id,site_id,kind_id,created_at) value (\"$title\",\"$description\",\"$category_id\",\"$project_id\",\"$site_id\",$priority_id,$user_id,$status_id,$kind_id,$created_at,site_id)";
-=======
 		$sql="insert into ticket (title,description,category_id,project_id,priority_id,user_id,status_id,site_id,kind_id,created_at) value (\"$title\",\"$description\",\"$category_id\",\"$project_id\",$priority_id,$user_id,$status_id,$site_id,$kind_id,$created_at)";
->>>>>>> 8c4d074c34817d70818d9934768bba2b01219ce6
 
 		$query_new_insert = mysqli_query($con,$sql);
 			if ($query_new_insert){
