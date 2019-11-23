@@ -4,7 +4,7 @@
     $statuses =mysqli_query($con, "select * from status");
     $kinds =mysqli_query($con, "select * from kind");
     $categories =mysqli_query($con, "select * from category");
-    $site =mysqli_query($con, "select * from site");
+    $sites =mysqli_query($con, "select * from site");
 
 ?>
 
@@ -35,7 +35,7 @@
                                 <select class="form-control" name="site_id" >
                                     <option selected="" value="">-- Selecciona --</option>
                                       <?php foreach($sites as $s):?>
-                                        <option value="<?php echo $p['id']; ?>"><?php echo $p['name']; ?></option>
+                                        <option value="<?php echo $s['id']; ?>"><?php echo $s['name']; ?></option>
                                       <?php endforeach; ?>
                                 </select>
                             </div>
@@ -46,18 +46,6 @@
                             <div class="col-md-9 col-sm-9 col-xs-12">
                                 <select class="form-control" name="kind_id" >
                                       <?php foreach($kinds as $p):?>
-                                        <option value="<?php echo $p['id']; ?>"><?php echo $p['name']; ?></option>
-                                      <?php endforeach; ?>
-                                </select>
-                            </div>
-                        </div>
-                       <div class="form-group">
-                           <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Site:
-                            </label> 
-                            <div class="col-md-9 col-sm-9 col-xs-12">
-                                <select class="form-control" name="site_id" >
-                                    <option selected="" value="">-- Selecciona --</option>
-                                      <?php foreach($sites as $p):?>
                                         <option value="<?php echo $p['id']; ?>"><?php echo $p['name']; ?></option>
                                       <?php endforeach; ?>
                                 </select>

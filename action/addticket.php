@@ -21,7 +21,7 @@
 		$user_id = $_SESSION["user_id"];
 		$status_id = $_POST["status_id"];
 		$kind_id = $_POST["kind_id"];
-		$site_id = $_POST["site"];
+		$site_id = $_POST["site_id"];
 		$created_at="NOW()";
 
 		// $user_id=$_SESSION['user_id'];
