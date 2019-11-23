@@ -30,7 +30,7 @@
 
 		$query_update = mysqli_query($con,$sql);
 			if ($query_update){
-				$messages[] = "El ticket ha sido actualizado satisfactoriamente.";
+				$messages[] = "El caso ha sido actualizado satisfactoriamente.";
 			} else{
 				$errors []= "Lo siento algo ha salido mal intenta nuevamente.".mysqli_error($con);
 			}

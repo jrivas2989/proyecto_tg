@@ -17,7 +17,7 @@
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span>
                     </button>
-                    <h4 class="modal-title" id="myModalLabel">Ingresar cliente</h4>
+                    <h4 class="modal-title" id="myModalLabel">Ingresar cliente:</h4>
                 </div>
                 <div class="modal-body">
                     <form class="form-horizontal form-label-left input_mask" method="post" id="add" name="add">
@@ -28,14 +28,13 @@
                               <input type="text" name="title" class="form-control" placeholder="Ingrese aqui" >
                             </div>
                         </div>
-                         
-                          <div class="form-group">
-                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Tipo de Problema:
+                         <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Site:
                              </label>
                             <div class="col-md-9 col-sm-9 col-xs-12">
-                                <select class="form-control" name="site" >
+                                <select class="form-control" name="site_id" >
                                     <option selected="" value="">-- Selecciona --</option>
-                                      <?php foreach($projects as $p):?>
+                                      <?php foreach($sites as $s):?>
                                         <option value="<?php echo $p['id']; ?>"><?php echo $p['name']; ?></option>
                                       <?php endforeach; ?>
                                 </select>
@@ -52,7 +51,18 @@
                                 </select>
                             </div>
                         </div>
-                       
+                       <div class="form-group">
+                           <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Site:
+                            </label> 
+                            <div class="col-md-9 col-sm-9 col-xs-12">
+                                <select class="form-control" name="site_id" >
+                                    <option selected="" value="">-- Selecciona --</option>
+                                      <?php foreach($sites as $p):?>
+                                        <option value="<?php echo $p['id']; ?>"><?php echo $p['name']; ?></option>
+                                      <?php endforeach; ?>
+                                </select>
+                            </div>
+                        </div>
                         <div class="form-group">
                             <label class="control-label col-md-3 col-sm-3 col-xs-12">Titulo:<span class="required">*</span></label>
                             <div class="col-md-9 col-sm-9 col-xs-12">

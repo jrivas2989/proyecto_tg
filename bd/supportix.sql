@@ -52,6 +52,8 @@ CREATE TABLE `category` (
 INSERT INTO `category` (`id`, `name`) VALUES
 (1, 'Jose Rivas'),
 (2, 'Laura Villanueva');
+(3, 'Angelin Lugo');
+
 
 -- --------------------------------------------------------
 
@@ -135,7 +137,7 @@ CREATE TABLE `site` (
 -- Volcado de datos para la tabla `site`
 --
 
-INSERT INTO `site` (`id`, `name`) VALUES
+INSERT INTO `site_id` (`id`, `name`) VALUES
 (1, 'Agueybana'),
 (2, 'Acqualina'),
 (3, 'Arallanes'),
@@ -279,6 +281,7 @@ ALTER TABLE `ticket`
   ADD KEY `kind_id` (`kind_id`),
   ADD KEY `category_id` (`category_id`),
   ADD KEY `project_id` (`project_id`);
+  ADD KEY `site_id` (`site_id`);
 
 --
 -- Indices de la tabla `user`
