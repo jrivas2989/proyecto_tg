@@ -24,14 +24,9 @@
 
                               <li class="<?php if(isset($active4)){echo $active4;}?>">
                               <a href="categories.php"><i class="fa fa-align-left"></i> Operadores</a>
-                        </li>
-                                <li class="<?php if(isset($active5)){echo $active5;}?>">
-                                <a href="reports.php"><i class="fa fa-area-chart"></i> Estadisticas</a>
                           </li>
-                          <li class="<?php if(isset($active5)){echo $active5;}?>">
-                        <a href="reports.php"><i class="fa fa-area-chart"></i> Consultas</a>
-                    </li>
-                </ul>
+                                
+            </ul>
             </div>
         </div><!-- /sidebar menu -->
     </div>
