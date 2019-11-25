@@ -67,7 +67,7 @@
                 <thead>
                     <tr class="headings">
                         <th class="column-title">Asunto </th>
-                        <th class="column-title">Proyecto </th>
+                        <th class="column-title">Departamento </th>
                         <th class="column-title">Prioridad </th>
                         <th class="column-title">Estado </th>
                         <th>Fecha</th>
@@ -86,6 +86,7 @@
                             $status_id=$r['status_id'];
                             $kind_id=$r['kind_id'];
                             $category_id=$r['category_id'];
+                            $site_id=$r['site_id'];
 
                             $sql = mysqli_query($con, "select * from project where id=$project_id");
                             if($c=mysqli_fetch_array($sql)) {
@@ -101,6 +102,7 @@
                             if($c=mysqli_fetch_array($sql)) {
                                 $name_status=$c['name'];
                             }
+                              
 
 
                 ?>
@@ -113,7 +115,10 @@
                     <input type="hidden" value="<?php echo $project_id;?>" id="project_id<?php echo $id;?>">
                     <input type="hidden" value="<?php echo $category_id;?>" id="category_id<?php echo $id;?>">
                     <input type="hidden" value="<?php echo $priority_id;?>" id="priority_id<?php echo $id;?>">
-                    <input type="hidden" value="<?php echo $status_id;?>" id="status_id<?php echo $id;?>">
+                  
+
+
+
 
 
                     <tr class="even pointer">
