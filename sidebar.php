@@ -11,16 +11,28 @@
                       <a><i class="fa fa-home"></i> Atenciones<span class="fa fa-chevron-down"></span></a>
                        <ul class="nav child_menu">
                          <li><a href="tickets.php">Nuevo caso</a></li>
-                          <li><a href="tickets.php">Mis Casos</a></li>
+                          <li><a href="tickets2.php">Mis Casos</a></li>
                           <li><a href="tickets.php">Mis bandeja</a></li>
                             </ul>
                     </li>
                     <li class="<?php if(isset($active5)){echo $active5;}?>">
                       <a href="reports.php"><i class="fa fa-area-chart"></i> Estadisticas</a>
                     </li>
+                    <ul class="nav child_menu">
+                         <li><a href="tickets.php">Resumen</a></li>
+                          <li><a href="tickets2.php">Produccion</a></li>
+                          <li><a href="tickets.php">Avance</a></li>
+                          <li><a href="tickets.php">Casos</a></li>
+                            </ul>
+     
                         <li class="<?php if(isset($active3)){echo $active3;}?>">
                                <a href="projects.php"><i class="fa fa-list-alt"></i> Mantenimientos</a>
                                 </li>
+                        <ul class="nav child_menu">
+                            <li><a href="tickets.php">Catalogo de Problemas</a></li>
+                             <li><a href="tickets2.php">Catalogo de Servicios</a></li>
+                             <li><a href="tickets.php">Cargos</a></li>
+                            </ul>
 
                               <li class="<?php if(isset($active4)){echo $active4;}?>">
                               <a href="categories.php"><i class="fa fa-align-left"></i> Operadores</a>
