@@ -118,6 +118,7 @@ $( "#upd" ).submit(function( event ) {
             $("#mod_category_id").val(category_id);
             $("#mod_priority_id").val(priority_id);
             $("#mod_status_id").val(status_id);
+            $("#mod_site_id").val(site_id);
         }
 
 </script>
