@@ -48,7 +48,7 @@
         //pagination variables
         $page = (isset($_REQUEST['page']) && !empty($_REQUEST['page']))?$_REQUEST['page']:1;
         $per_page = 10; //how much records you want to show
-        $adjacents  = 4; //gap between pages after number of adjacents
+        $adjacents  = 10; //gap between pages after number of adjacents
         $offset = ($page - 1) * $per_page;
         //Count the total number of row in your table*/
         $count_query   = mysqli_query($con, "SELECT count(*) AS numrows FROM $sTable  $sWhere");
@@ -71,6 +71,8 @@
                         <th class="column-title">Prioridad </th>
                         <th class="column-title">Estado </th>
                         <th>Fecha</th>
+                        <th class="column-title">Operador</th>
+                        <th class="column-title">Site</th>
                         <th class="column-title no-link last"><span class="nobr"></span></th>
                     </tr>
                 </thead>
@@ -90,17 +92,22 @@
 
                             $sql = mysqli_query($con, "select * from project where id=$project_id");
                             if($c=mysqli_fetch_array($sql)) {
-                                $name_project=$c['name'];
+                            $name_project=$c['name'];
                             }
 
                             $sql = mysqli_query($con, "select * from priority where id=$priority_id");
                             if($c=mysqli_fetch_array($sql)) {
-                                $name_priority=$c['name'];
+                            $name_priority=$c['name'];
                             }
 
                             $sql = mysqli_query($con, "select * from status where id=$status_id");
                             if($c=mysqli_fetch_array($sql)) {
-                                $name_status=$c['name'];
+                            $name_status=$c['name'];
+                            }
+
+                            $sql = mysqli_query($con, "select * from category where id=$category_id");
+                            if($c=mysqli_fetch_array($sql)) {
+                            $name_category=$c['name'];
                             }
                               
 
@@ -109,12 +116,14 @@
                     <input type="hidden" value="<?php echo $id;?>" id="id<?php echo $id;?>">
                     <input type="hidden" value="<?php echo $title;?>" id="title<?php echo $id;?>">
                     <input type="hidden" value="<?php echo $description;?>" id="description<?php echo $id;?>">
+                    <input type="hidden" value="<?php echo $description;?>" id="description<?php echo $id;?>">
 
                     <!-- me obtiene los datos -->
                  <input type="hidden" value="<?php echo $kind_id;?>" id="kind_id<?php echo $id;?>">
                     <input type="hidden" value="<?php echo $project_id;?>" id="project_id<?php echo $id;?>">
                     <input type="hidden" value="<?php echo $category_id;?>" id="category_id<?php echo $id;?>">
                     <input type="hidden" value="<?php echo $priority_id;?>" id="priority_id<?php echo $id;?>">
+               
                   
 
 
@@ -126,7 +135,7 @@
                         <td><?php echo $name_project; ?></td>
                         <td><?php echo $name_priority; ?></td>
                         <td><?php echo $name_status;?></td>
-                        <td><?php echo $created_at;?></td>
+                       <td><?php echo $created_at;?></td>
                         <td ><span class="pull-right">
                         <a href="#" class='btn btn-default' title='Editar producto' onclick="obtener_datos('<?php echo $id;?>');" data-toggle="modal" data-target=".bs-example-modal-lg-udp"><i class="glyphicon glyphicon-edit"></i></a> 
                         <a href="#" class='btn btn-default' title='Borrar producto' onclick="eliminar('<?php echo $id; ?>')"><i class="glyphicon glyphicon-trash"></i> </a></span></td>
