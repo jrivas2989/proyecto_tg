@@ -73,6 +73,7 @@
                         <th>Fecha</th>
                         <th class="column-title">Operador</th>
                         <th class="column-title">Site</th>
+                        <th class="column-title"></th>
                         <th class="column-title no-link last"><span class="nobr"></span></th>
                     </tr>
                 </thead>
@@ -92,22 +93,27 @@
 
                             $sql = mysqli_query($con, "select * from project where id=$project_id");
                             if($c=mysqli_fetch_array($sql)) {
-                            $name_project=$c['name'];
+                                $name_project=$c['name'];
                             }
 
                             $sql = mysqli_query($con, "select * from priority where id=$priority_id");
                             if($c=mysqli_fetch_array($sql)) {
-                            $name_priority=$c['name'];
+                                $name_priority=$c['name'];
                             }
 
                             $sql = mysqli_query($con, "select * from status where id=$status_id");
                             if($c=mysqli_fetch_array($sql)) {
-                            $name_status=$c['name'];
+                                $name_status=$c['name'];
                             }
 
                             $sql = mysqli_query($con, "select * from category where id=$category_id");
                             if($c=mysqli_fetch_array($sql)) {
-                            $name_category=$c['name'];
+                                $name_category=$c['name'];
+                            }
+
+                            $sql = mysqli_query($con, "select * from site where id=$site_id");
+                            if($c=mysqli_fetch_array($sql)) {
+                                $name_site=$c['name'];
                             }
                               
 
@@ -136,6 +142,8 @@
                         <td><?php echo $name_priority; ?></td>
                         <td><?php echo $name_status;?></td>
                        <td><?php echo $created_at;?></td>
+                       <td><?php echo $name_category;?></td>
+                       <td><?php echo $name_site;?></td>
                         <td ><span class="pull-right">
                         <a href="#" class='btn btn-default' title='Editar producto' onclick="obtener_datos('<?php echo $id;?>');" data-toggle="modal" data-target=".bs-example-modal-lg-udp"><i class="glyphicon glyphicon-edit"></i></a> 
                         <a href="#" class='btn btn-default' title='Borrar producto' onclick="eliminar('<?php echo $id; ?>')"><i class="glyphicon glyphicon-trash"></i> </a></span></td>
