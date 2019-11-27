@@ -42,15 +42,15 @@
                         <div id="respuesta"></div>
                     </div>
                     <div class="col-md-8 col-xs-12 col-sm-12">
-                        <?php include "lib/alerts.php";
+                       
+                                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                    </li><?php include "lib/alerts.php";
                             profile(); //llamada a la funcion de alertas
                         ?>    
                         <div class="x_panel">
                             <div class="x_title">
                                 <h2>Mi perfil</h2>
-                                <ul class="nav navbar-right panel_toolbox">
-                                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                                    </li>
+                                <ul class="nav navbar-right pa
                                     <li><a class="close-link"><i class="fa fa-close"></i></a>
                                     </li>
                                 </ul>

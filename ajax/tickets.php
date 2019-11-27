@@ -93,7 +93,7 @@
 
                             $sql = mysqli_query($con, "select * from project where id=$project_id");
                             if($c=mysqli_fetch_array($sql)) {
-                                $name_project=$c['name'];
+                            $name_project=$c['name'];
                             }
 
                             $sql = mysqli_query($con, "select * from priority where id=$priority_id");
@@ -103,18 +103,19 @@
 
                             $sql = mysqli_query($con, "select * from status where id=$status_id");
                             if($c=mysqli_fetch_array($sql)) {
-                                $name_status=$c['name'];
+                            $name_status=$c['name'];
                             }
 
                             $sql = mysqli_query($con, "select * from category where id=$category_id");
                             if($c=mysqli_fetch_array($sql)) {
                                 $name_category=$c['name'];
                             }
-
                             $sql = mysqli_query($con, "select * from site where id=$site_id");
                             if($c=mysqli_fetch_array($sql)) {
-                                $name_site=$c['name'];
+                            $name_site=$c['name'];
                             }
+
+                            
                               
 
 

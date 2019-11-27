@@ -43,31 +43,34 @@
         </div><!-- /sidebar menu -->
     </div>
 </div> 
-
-    <div class="top_nav"><!-- top navigation -->
-        <div class="nav_menu">
-            <nav>
+<!-- top navigation -->
+     <div class="top_nav">
+            <div class="nav_menu">
                 <div class="nav toggle">
-                    <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+                  <a id="menu_toggle"><i class="fa fa-bars"></i></a>
                 </div>
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="">
-                        <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                            <img src="images/profiles/<?php echo $profile_pic;?>" alt=""><?php echo $name;?>
+                    <li class="nav-item dropdown open">
+                    <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                            <img src="images/profiles/<?php echo $profile_pic;?>" alt="Profile Image"><?php echo $name;?>
                             <span class=" fa fa-angle-down"></span>
-                        </a>
-                        <ul class="dropdown-menu dropdown-usermenu pull-right">
+                            </a>
+                            <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
+                            <li role="presentation" class="nav-item dropdown open">
+                            <a href="javascript:;" class="dropdown-toggle info-number" id="navbarDropdown1" data-toggle="dropdown" aria-expanded="false">
+                            <i class="fa fa-envelope-o"></i>
+                            <span class="badge bg-green">0</span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-usermenu pull-right">
                             <li><a href="dashboard.php"><i class="fa fa-user"></i> Mi cuenta</a></li>
                             <li><a href="action/logout.php"><i class="fa fa-sign-out pull-right"></i> Cerrar Sesión</a></li>
-                        </ul>
-
-
-                    
                             </ul>
-     
-
-                    </li>
+                         </ul>
+                     </li>
                 </ul>
             </nav>
         </div>
-    </div><!-- /top navigation -->    
+    </div>
+
+    <!-- /top navigation -->   
+    

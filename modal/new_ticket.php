@@ -7,8 +7,8 @@
     $sites =mysqli_query($con, "select * from site");
 
 ?>
-
-    <div> <!-- Modal -->
+<!-- Modal -->
+    <div> 
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg-add"><i class="fa fa-plus-circle"></i> Agregar Caso</button>
     </div>
     <div class="modal fade bs-example-modal-lg-add" tabindex="-1" role="dialog" aria-hidden="true">

@@ -65,7 +65,7 @@
                                 <div class="clearfix"></div>
                                 <br />
                                 <div>
-                                    <h1><i class="fa fa-ticket"></i>SisWebReport</h1>
+                                    <h1><i class="fa fa-ticket"></i>SisWebReport CPK Inversiones, C.A.</h1>
                                     
                                 </div>
                             </div>
