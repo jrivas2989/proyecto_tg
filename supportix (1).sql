@@ -53,6 +53,7 @@ INSERT INTO `category` (`id`, `name`) VALUES
 (1, 'Jose Rivas'),
 (2, 'Laura Villanueva'),
 (3, 'Angelin Lugo');
+(4, 'Operador 4');
 
 -- --------------------------------------------------------
 
@@ -74,8 +75,7 @@ INSERT INTO `kind` (`id`, `name`) VALUES
 (2, 'Velocidad'),
 (3, 'Router'),
 (4, 'Bloqueo'),
-(5, 'Bloqueo'),
-(6, 'Site Caido'),
+(5, 'Site Caido'),
 (7, 'Mudanza'),
 (8, 'Por visita');
 
