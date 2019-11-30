@@ -37,12 +37,12 @@
                               <li class="<?php if(isset($active4)){echo $active4;}?>">
                               <a href="categories.php"><i class="fa fa-align-left"></i> Operadores</a>
                           </li>
-                                
-            </ul>
+                      </ul>
             </div>
-        </div><!-- /sidebar menu -->
+        </div>
     </div>
 </div> 
+<!-- /sidebar menu -->
 <!-- top navigation -->
      <div class="top_nav">
             <div class="nav_menu">
