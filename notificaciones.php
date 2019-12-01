@@ -23,6 +23,4 @@ while($row=mysqli_fetch_array($result)) {
 if(!empty($response)) {
 	print $response;
 }
-
-
 ?>

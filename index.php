@@ -87,7 +87,7 @@
     <script type="text/javascript">
       function myFunction() {
         $.ajax({
-          url: "php/notificaciones.php",
+          url: "modal/notificaciones.php",
           type: "POST",
           processData:false,
           success: function(data){

@@ -11,7 +11,7 @@
                       <a><i class="fa fa-home"></i> Atenciones<span class="fa fa-chevron-down"></span></a>
                        <ul class="nav child_menu">
                          <li><a href="tickets.php">Nuevo caso</a></li>
-                          <li><a href="tickets2.php">Mis Casos</a></li>
+                          <li><a href="tickets.php">Mis Casos</a></li>
                           <li><a href="tickets.php">Mis bandeja</a></li>
                             </ul>
                     </li>
@@ -38,7 +38,7 @@
                               <a href="categories.php"><i class="fa fa-align-left"></i> Operadores</a>
                           </li>
                       </ul>
-            </div>
+              </div>
         </div>
     </div>
 </div> 
@@ -59,7 +59,7 @@
                             <li role="presentation" class="nav-item dropdown open">
                             <a href="javascript:;" class="dropdown-toggle info-number" id="navbarDropdown1" data-toggle="dropdown" aria-expanded="false">
                             <i class="fa fa-envelope-o"></i>
-                            <span class="badge bg-green">0</span>
+                            <span class="badge bg-red">0</span>
                             </a>
                             <ul class="dropdown-menu dropdown-usermenu pull-right">
                             <li><a href="dashboard.php"><i class="fa fa-user"></i> Mi cuenta</a></li>
@@ -72,5 +72,8 @@
         </div>
     </div>
 
-    <!-- /top navigation -->   
+    <!-- /top navigation -->  
+
+   
+ 
     
