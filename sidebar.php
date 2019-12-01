@@ -45,30 +45,42 @@
 <!-- /sidebar menu -->
 <!-- top navigation -->
      <div class="top_nav">
-            <div class="nav_menu">
-                <div class="nav toggle">
-                  <a id="menu_toggle"><i class="fa fa-bars"></i></a>
-                </div>
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="nav-item dropdown open">
-                    <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                            <img src="images/profiles/<?php echo $profile_pic;?>" alt="Profile Image"><?php echo $name;?>
-                            <span class=" fa fa-angle-down"></span>
-                            </a>
-                            <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
-                            <li role="presentation" class="nav-item dropdown open">
-                            <a href="javascript:;" class="dropdown-toggle info-number" id="navbarDropdown1" data-toggle="dropdown" aria-expanded="false">
-                            <i class="fa fa-envelope-o"></i>
-                            <span class="badge bg-green">0</span>
-                            </a>
-                            <ul class="dropdown-menu dropdown-usermenu pull-right">
-                            <li><a href="dashboard.php"><i class="fa fa-user"></i> Mi cuenta</a></li>
-                            <li><a href="action/logout.php"><i class="fa fa-sign-out pull-right"></i> Cerrar Sesión</a></li>
-                            </ul>
-                         </ul>
-                     </li>
-                </ul>
-            </nav>
+      <div class="nav_menu">
+          <div class="nav toggle">
+            <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+          </div>
+          <ul class="nav navbar-nav navbar-right">
+            <li class="nav-item dropdown" style="padding-left: 15px;">
+              <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
+                <img src="images/profiles/<?php echo $profile_pic;?>" alt="Profile Image"><?php echo $name;?>
+              </a>
+              <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item"  href="dashboard.php"> Profile</a>
+                <a class="dropdown-item" href="dashboard.php"><i class="fa fa-user"></i> Mi cuenta</a>
+                <a class="dropdown-item" href="action/logout.php"><i class="fa fa-sign-out pull-right"></i> Cerrar Sesión</a>
+              </div>
+            </li>
+            <li role="presentation" class="nav-item dropdown">
+              <a href="javascript:;" class="dropdown-toggle info-number" id="navbarDropdown1" data-toggle="dropdown" aria-expanded="false">
+                <i class="fa fa-envelope-o"></i>
+                <span class="badge bg-green">6</span>
+              </a>
+              <ul class="dropdown-menu list-unstyled msg_list" role="menu" aria-labelledby="navbarDropdown1">
+                <li class="nav-item">
+                  <a class="dropdown-item">
+                    <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                    <span>
+                      <span>John Smith</span>
+                      <span class="time">3 mins ago</span>
+                    </span>
+                    <span class="message">
+                      Film festivals used to be do-or-die moments for movie makers. They were where...
+                    </span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
         </div>
     </div>
 
