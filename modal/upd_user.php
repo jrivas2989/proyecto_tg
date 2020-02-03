@@ -26,6 +26,14 @@
                                     <option value="0" >Inactivo</option>  
                             </select>
                         </div>
+                        <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+                            <select class="form-control" required name="rol">
+                                    <option value="" selected>-- Selecciona el rol --</option>
+                                    <option value="1" >administrador</option>
+                                    <option value="2" >operador</option>
+                                    <option value="3" >usuario</option>  
+                            </select>
+                        </div>
                         <div class="form-group">
                             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="password">Contraseña<span class="required">*</span>
                             </label>

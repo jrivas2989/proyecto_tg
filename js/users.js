@@ -13,17 +13,15 @@
 				success:function(data){
 					$(".outer_div").html(data).fadeIn('slow');
 					$('#loader').html('');
-					
+
 				}
 			})
 		}
 
-	
-		
 			function eliminar (id)
 		{
 			var q= $("#q").val();
-		if (confirm("Realmente deseas eliminar al usuario?")){	
+		if (confirm("Realmente deseas eliminar al usuario?")){
 		$.ajax({
         type: "GET",
         url: "./ajax/users.php",
@@ -38,8 +36,3 @@
 			});
 		}
 		}
-		
-		
-		
-		
-

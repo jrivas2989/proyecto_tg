@@ -1,14 +1,16 @@
  
-                <footer><!-- footer content -->
-                    <div class="pull-right">
-                        Proyecto realizado bajo software libre <a target="_blank" style="color: #0000ff" href="http://github.com/jrivas2989/proyecto_tg">Implementado para la empresa CPK Inversiones, C.A. </a>Realizado por: Jose Rivas <a style="color: #0000ff; text-decoration: underline;" target="_blank" href="https://github.com/jrivas2989/proyecto_tg"></a>
-                    </div>
-                    <div class="clearfix"></div>
-                </footer><!-- /footer content -->
-            </div>
-        </div>
-
-        <!-- jQuery -->
+   
+           <footer>
+          <div class="pull-right">
+            Proyecto Realizado Por Jose Rivas <a href="https://github.com/jrivas2989/proyecto_tg">CPK Inversiones, C.A.</a>
+          </div>
+          <div class="clearfix"></div>
+        </footer>
+        <!-- /footer content -->
+      </div>
+    </div>
+   
+    <!-- jQuery -->
         <script src="js/jquery/dist/jquery.min.js"></script>
         <!-- Bootstrap -->
         <script src="css/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -50,7 +52,9 @@
         <!-- bootstrap-daterangepicker -->
         <script src="js/moment/min/moment.min.js"></script>
         <script src="css/bootstrap-daterangepicker/daterangepicker.js"></script>
-
+        
+        
+              
 
     </body>
 </html>

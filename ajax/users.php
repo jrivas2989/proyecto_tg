@@ -1,27 +1,54 @@
 <?php
-
+    session_start();
     include "../config/config.php";//Contiene funcion que conecta a la base de datos
-    
+
     $action = (isset($_REQUEST['action']) && $_REQUEST['action'] !=NULL)?$_REQUEST['action']:'';
+   
+
     if (isset($_GET['id'])){
+        
         $id_expence=intval($_GET['id']);
         $query=mysqli_query($con, "SELECT * from user where id='".$id_expence."'");
         $count=mysqli_num_rows($query);
-            if ($delete1=mysqli_query($con,"DELETE FROM user WHERE id='".$id_expence."'")){
-            ?>
-            <div class="alert alert-success alert-dismissible" role="alert">
-              <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <strong>Aviso!</strong> Datos eliminados exitosamente.
-            </div>
-            <?php 
-        }else {
-            ?>
-            <div class="alert alert-danger alert-dismissible" role="alert">
-              <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <strong>Error!</strong> Lo siento algo ha salido mal intenta nuevamente.
-            </div>
-<?php
-        } //end else
+
+        if (isset($_SESSION['user_id']) && $_SESSION!==null) {
+            
+            $id_user = $_SESSION['user_id'];
+            $query = mysqli_query($con,"SELECT * FROM user WHERE id =\"$id_user\";");
+
+            if ($row = mysqli_fetch_array($query)) {
+                            
+                if(1 == $row['rol']){
+                    //Si es administrador, intentará eliminar
+                    
+                    if ($delete1=mysqli_query($con,"DELETE FROM user WHERE id='".$id_expence."'")){
+                    
+                        ?>
+                        <div class="alert alert-success alert-dismissible" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <strong>Aviso!</strong> Datos eliminados exitosamente.
+                        </div>
+                        <?php
+                    }else {
+                        //Si falla eliminar, sale este mensaje
+                        ?>
+                        <div class="alert alert-danger alert-dismissible" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <strong>Error!</strong> Lo siento algo ha salido mal intenta nuevamente.
+                        </div>
+                        <?php
+                    } //end else
+                }else{
+                    //Si no es administrador saldrá este mensaje
+                    ?>
+                    <div class="alert alert-danger alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <strong>Error!</strong> Lo siento, no tiene permisos para eliminar.
+                    </div>
+                    <?php
+                }
+            }
+        } //end if
     } //end if
 ?>
 
@@ -60,7 +87,7 @@
         $query = mysqli_query($con, $sql);
         //loop through fetched data
         if ($numrows>0){
-            
+
             ?>
             <table class="table table-striped jambo_table bulk_action">
                 <thead>
@@ -73,7 +100,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                <?php 
+                <?php
                         while ($r=mysqli_fetch_array($query)) {
                             $id=$r['id'];
                             $status=$r['is_active'];
@@ -93,8 +120,8 @@
                         <td ><?php echo $status_f; ?></td>
                         <td><?php echo $created_at;?></td>
                         <td ><span class="pull-right">
-                        <a href="#" class='btn btn-default' title='Editar producto' onclick="obtener_datos('<?php echo $id;?>');" data-toggle="modal" data-target=".bs-example-modal-lg-upd"><i class="glyphicon glyphicon-edit"></i></a> 
-                        <a href="#" class='btn btn-default' title='Borrar producto' onclick="eliminar('<?php echo $id; ?>')"><i class="glyphicon glyphicon-trash"></i> </a></span></td>
+                        <a href="#" class='btn btn-default' title='Editar' onclick="obtener_datos('<?php echo $id;?>');" data-toggle="modal" data-target=".bs-example-modal-lg-upd"><i class="glyphicon glyphicon-edit"></i></a>
+                        <a href="#" class='btn btn-default' title='Borrar' onclick="eliminar('<?php echo $id; ?>')"><i class="glyphicon glyphicon-trash"></i> </a></span></td>
                     </tr>
                 <?php
                     } //end while
@@ -108,12 +135,12 @@
             </div>
             <?php
         }else{
-           ?> 
+           ?>
             <div class="alert alert-warning alert-dismissible" role="alert">
               <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
               <strong>Aviso!</strong> No hay datos para mostrar
             </div>
-        <?php    
+        <?php
         }
     }
 ?>

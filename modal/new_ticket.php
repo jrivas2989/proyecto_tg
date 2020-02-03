@@ -1,3 +1,4 @@
+
 <?php
     $projects =mysqli_query($con, "select * from project");
     $priorities =mysqli_query($con, "select * from priority");
@@ -5,19 +6,22 @@
     $kinds =mysqli_query($con, "select * from kind");
     $categories =mysqli_query($con, "select * from category");
     $sites =mysqli_query($con, "select * from site");
+    $nom =mysqli_query($con, "select * from nomclient");
+    
+  
 
 ?>
-<!-- Modal -->
-    <div> 
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg-add"><i class="fa fa-plus-circle"></i> Agregar Caso</button>
+
+<div> <!-- Modal -->
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg-add"><i class="fa fa-plus-circle"></i> Agregar caso</button>
     </div>
     <div class="modal fade bs-example-modal-lg-add" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-md">
             <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span>
+                <div class="modal-header"> 
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span>
                     </button>
-                    <h4 class="modal-title" id="myModalLabel">Ingresar cliente:</h4>
+                    <h4 class="modal-title" id="myModalLabel">Agregar caso:</h4>
                 </div>
                 <div class="modal-body">
                     <form class="form-horizontal form-label-left input_mask" method="post" id="add" name="add">
@@ -58,14 +62,14 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-md-3 col-sm-3 col-xs-12">Descripción <span class="required">*</span>
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12">Descripción: <span class="required">*</span>
                             </label>
                             <div class="col-md-9 col-sm-9 col-xs-12">
                               <textarea name="description" class="form-control col-md-7 col-xs-12"  placeholder="Descripción"></textarea>
                             </div>
                         </div>
                         <div class="form-group">
-                           <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Departamento
+                           <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Departamento:
                             </label> 
                             <div class="col-md-9 col-sm-9 col-xs-12">
                                 <select class="form-control" name="project_id" >
@@ -77,7 +81,7 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Operador
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Operador:
                             </label>
                             <div class="col-md-9 col-sm-9 col-xs-12">
                                 <select class="form-control" name="category_id" >
@@ -89,7 +93,7 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Prioridad
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Prioridad:
                             </label>
                             <div class="col-md-9 col-sm-9 col-xs-12">
                                 <select class="form-control" name="priority_id" >
@@ -101,7 +105,7 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Estado
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Estado:
                             </label>
                             <div class="col-md-9 col-sm-9 col-xs-12">
                                 <select class="form-control" name="status_id" >
@@ -126,4 +130,26 @@
                 </div>
             </div>
         </div>
-    </div> <!-- /Modal -->
+    </div> 
+
+    <!-- /Modal -->
+   <script src="js/push.min.js"></script>
+     <?php
+            echo '</script>
+
+<script>
+          Push.create("Tienes casos recibidos por resolver", {
+            body: "Resuelvalos a la mayor  brevedad posible",
+            icon: "images/cpk.jpg",
+            timeout: 5000,
+            onClick: function () {
+
+                 window.location="https://github.com/jrivas2989/proyecto_tg";
+                 this.close();
+            }
+          
+       });
+          </script>'
+ ?>
+</script>
+    

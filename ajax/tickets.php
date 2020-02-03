@@ -1,20 +1,25 @@
 <?php
 
     include "../config/config.php";//Contiene funcion que conecta a la base de datos
-    
+
     $action = (isset($_REQUEST['action']) && $_REQUEST['action'] !=NULL)?$_REQUEST['action']:'';
     if (isset($_GET['id'])){
         $id_del=intval($_GET['id']);
+        $id_del2=intval($_GET['rol']);
         $query=mysqli_query($con, "SELECT * from ticket where id='".$id_del."'");
         $count=mysqli_num_rows($query);
 
+
+
+
             if ($delete1=mysqli_query($con,"DELETE FROM ticket WHERE id='".$id_del."'")){
+          
 ?>
             <div class="alert alert-success alert-dismissible" role="alert">
               <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
               <strong>Aviso!</strong> Datos eliminados exitosamente.
             </div>
-        <?php 
+        <?php
             }else {
         ?>
                 <div class="alert alert-danger alert-dismissible" role="alert">
@@ -61,24 +66,24 @@
         $query = mysqli_query($con, $sql);
         //loop through fetched data
         if ($numrows>0){
-            
+
             ?>
             <table class="table table-striped jambo_table bulk_action">
                 <thead>
                     <tr class="headings">
-                        <th class="column-title">Asunto </th>
-                        <th class="column-title">Departamento </th>
-                        <th class="column-title">Prioridad </th>
-                        <th class="column-title">Estado </th>
-                        <th>Fecha</th>
-                        <th class="column-title">Operador</th>
-                        <th class="column-title">Site</th>
-                        <th class="column-title"></th>
+                        <th class="column-title">Asunto: </th>
+                        <th class="column-title">Departamento: </th>
+                        <th class="column-title">Prioridad: </th>
+                        <th class="column-title">Estado: </th>
+                        <th>Fecha:</th>
+                        <th class="column-title">Operador:</th>
+                        <th class="column-title">Site:</th>
+                        <th class="column-title">Nom cliente</th>
                         <th class="column-title no-link last"><span class="nobr"></span></th>
                     </tr>
                 </thead>
                 <tbody>
-                <?php 
+                <?php
                         while ($r=mysqli_fetch_array($query)) {
                             $id=$r['id'];
                             $created_at=date('d/m/Y', strtotime($r['created_at']));
@@ -90,6 +95,7 @@
                             $kind_id=$r['kind_id'];
                             $category_id=$r['category_id'];
                             $site_id=$r['site_id'];
+
 
                             $sql = mysqli_query($con, "select * from project where id=$project_id");
                             if($c=mysqli_fetch_array($sql)) {
@@ -115,29 +121,26 @@
                             $name_site=$c['name'];
                             }
 
-                            
-                              
+
+
+
 
 
                 ?>
                     <input type="hidden" value="<?php echo $id;?>" id="id<?php echo $id;?>">
                     <input type="hidden" value="<?php echo $title;?>" id="title<?php echo $id;?>">
                     <input type="hidden" value="<?php echo $description;?>" id="description<?php echo $id;?>">
-                    <input type="hidden" value="<?php echo $description;?>" id="description<?php echo $id;?>">
+
 
                     <!-- me obtiene los datos -->
                  <input type="hidden" value="<?php echo $kind_id;?>" id="kind_id<?php echo $id;?>">
                     <input type="hidden" value="<?php echo $project_id;?>" id="project_id<?php echo $id;?>">
                     <input type="hidden" value="<?php echo $category_id;?>" id="category_id<?php echo $id;?>">
                     <input type="hidden" value="<?php echo $priority_id;?>" id="priority_id<?php echo $id;?>">
-               
-                  
+                    <input type="hidden" value="<?php echo $site_id;?>" id="$site_id<?php echo $id;?>">
 
 
-
-
-
-                    <tr class="even pointer">
+                        <tr class="even pointer">
                         <td><?php echo $title;?></td>
                         <td><?php echo $name_project; ?></td>
                         <td><?php echo $name_priority; ?></td>
@@ -146,9 +149,9 @@
                        <td><?php echo $name_category;?></td>
                        <td><?php echo $name_site;?></td>
                         <td ><span class="pull-right">
-                        <a href="#" class='btn btn-default' title='Editar producto' onclick="obtener_datos('<?php echo $id;?>');" data-toggle="modal" data-target=".bs-example-modal-lg-udp"><i class="glyphicon glyphicon-edit"></i></a> 
-                        <a href="#" class='btn btn-default' title='Borrar producto' onclick="eliminar('<?php echo $id; ?>')"><i class="glyphicon glyphicon-trash"></i> </a></span></td>
-                    </tr>
+                        <a href="#" class='btn btn-default' title='Editar' onclick="obtener_datos('<?php echo $id;?>');" data-toggle="modal" data-target=".bs-example-modal-lg-udp"><i class="glyphicon glyphicon-edit"></i></a>
+                        <a href="#" class='btn btn-default' title='Borrar' onclick="eliminar('<?php echo $id; ?>')"><i class="glyphicon glyphicon-trash"></i> </a></span></td>
+                   </tr>
                 <?php
                     } //en while
                 ?>
@@ -161,12 +164,12 @@
             </div>
             <?php
         }else{
-           ?> 
+           ?>
             <div class="alert alert-warning alert-dismissible" role="alert">
               <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
               <strong>Aviso!</strong> No hay datos para mostrar!
             </div>
-        <?php    
+        <?php
         }
     }
 ?>

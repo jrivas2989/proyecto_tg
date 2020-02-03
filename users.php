@@ -14,12 +14,8 @@
                     ?>
                     <div class="x_panel">
                         <div class="x_title">
-                            <h2>Usuarios</h2>
+                            <h2>Lista de Usuarios:</h2>
                             <ul class="nav navbar-right panel_toolbox">
-                                <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                                </li>
-                                <li><a class="close-link"><i class="fa fa-close"></i></a>
-                                </li>
                             </ul>
                             <div class="clearfix"></div>
                         </div>
@@ -27,7 +23,7 @@
                         <!-- form search -->
                         <form class="form-horizontal" role="form" id="datos_cotizacion">
                             <div class="form-group row">
-                                <label for="q" class="col-md-2 control-label">Nombre o E-mail</label>
+                                <label for="q" class="col-md-2 control-label">Nombre o E-mail:</label>
                                 <div class="col-md-4">
                                     <input type="text" class="form-control" id="q" placeholder="Nombre o Correo Electrónico" onkeyup='load(1);'>
                                 </div>
@@ -105,9 +101,11 @@ $( "#upd_user" ).submit(function( event ) {
             var name = $("#name"+id).val();
             var email = $("#email"+id).val();
             var status = $("#status"+id).val();
+            var rol = $("#rol"+idrol).val();
             $("#mod_id").val(id);
             $("#mod_name").val(name);
             $("#mod_email").val(email);
             $("#mod_status").val(status);
+            $("#mod_rol").val(rol);
         }
 </script>

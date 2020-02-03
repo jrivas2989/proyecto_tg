@@ -5,7 +5,7 @@
         header("location: index.php");
     }
 ?>
-<?php 
+<?php
     $id=$_SESSION['user_id'];
     $query=mysqli_query($con,"SELECT * from user where id=$id");
     while ($row=mysqli_fetch_array($query)) {
@@ -14,7 +14,9 @@
         $email = $row['email'];
         $profile_pic = $row['profile_pic'];
         $created_at = $row['created_at'];
-  
+        $email = $row['rol'];
+
+
     }
 
 ?>
@@ -35,6 +37,12 @@
         <link href="css/nprogress/nprogress.css" rel="stylesheet">
           <!-- iCheck -->
        <link href="css/iCheck/skins/flat/green.css" rel="stylesheet">
+       <!-- bootstrap-progressbar -->
+    <link href="../vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
+    <!-- JQVMap -->
+    <link href="../vendors/jqvmap/dist/jqvmap.min.css" rel="stylesheet"/>
+    <!-- bootstrap-daterangepicker -->
+    <link href="../vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
        <!-- Datatables -->
         <link href="css/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet">
         <link href="css/datatables.net-buttons-bs/css/buttons.bootstrap.min.css" rel="stylesheet">
@@ -53,6 +61,46 @@
         <!-- MICSS button[type="file"] -->
         <link rel="stylesheet" href="css/micss.css">
 
+<!-- jQuery -->
+    <script src="../vendors/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap -->
+   <script src="../vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- FastClick -->
+    <script src="../vendors/fastclick/lib/fastclick.js"></script>
+    <!-- NProgress -->
+    <script src="../vendors/nprogress/nprogress.js"></script>
+    <!-- Chart.js -->
+    <script src="../vendors/Chart.js/dist/Chart.min.js"></script>
+    <!-- jQuery Sparklines -->
+    <script src="../vendors/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
+    <!-- morris.js -->
+    <script src="../vendors/raphael/raphael.min.js"></script>
+    <script src="../vendors/morris.js/morris.min.js"></script>
+    <!-- gauge.js -->
+    <script src="../vendors/gauge.js/dist/gauge.min.js"></script>
+    <!-- bootstrap-progressbar -->
+    <script src="../vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+    <!-- Skycons -->
+    <script src="../vendors/skycons/skycons.js"></script>
+    <!-- Flot -->
+    <script src="../vendors/Flot/jquery.flot.js"></script>
+    <script src="../vendors/Flot/jquery.flot.pie.js"></script>
+    <script src="../vendors/Flot/jquery.flot.time.js"></script>
+    <script src="../vendors/Flot/jquery.flot.stack.js"></script>
+    <script src="../vendors/Flot/jquery.flot.resize.js"></script>
+    <!-- Flot plugins -->
+    <script src="../vendors/flot.orderbars/js/jquery.flot.orderBars.js"></script>
+    <script src="../vendors/flot-spline/js/jquery.flot.spline.min.js"></script>
+    <script src="../vendors/flot.curvedlines/curvedLines.js"></script>
+    <!-- DateJS -->
+    <script src="../vendors/DateJS/build/date.js"></script>
+    <!-- bootstrap-daterangepicker -->
+    <script src="../vendors/moment/min/moment.min.js"></script>
+    <script src="../vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+
+    <!-- Custom Theme Scripts -->
+    <script src="../build/js/custom.min.js"></script>
+
     </head>
 
     <body class="nav-md">
@@ -61,7 +109,8 @@
                 <div class="col-md-3 left_col">
                     <div class="left_col scroll-view">
                         <div class="navbar nav_title" style="border:0;">
-                          <a href="#" class="site_title"><i class="fa fa-ticket"></i> <span>SisWebReport</span></a>
+                          <a href="#" class="site_title">
+                            <i class="fa fa-ticket"></i> <span>SisWebReport</span></a>
                         </div>
                         <div class="clearfix"></div>
 
@@ -71,10 +120,13 @@
                                         <img src="images/profiles/<?php echo $profile_pic;?>" alt="<?php echo $name;?>" class="img-circle profile_img">
                                     </div>
                                     <div class="profile_info">
-                                        <span>Bienvenido</span>
-                                        <h2><?php echo $name;?></h2>
-                                    </div>
+                                        <span>Bienvenido</span><?php echo $_SESSION['user_id'].' -'.$_SESSION['user_id']; ?></span>
+                                      <h2><?php echo $name;?></h2>
+                                      </div>
                                 </div>
+
+
+
                             <!-- /menu profile quick info -->
 
                         <br />

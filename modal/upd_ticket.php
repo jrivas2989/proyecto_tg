@@ -5,6 +5,7 @@
     $kinds =mysqli_query($con, "select * from kind");
     $categories =mysqli_query($con, "select * from category");
     $site =mysqli_query($con, "select * from site");
+    $nom =mysqli_query($con, "select * from nomclient");
 ?>
     <!-- Modal -->
     <div class="modal fade bs-example-modal-lg-udp" tabindex="-1" role="dialog" aria-hidden="true">

@@ -22,7 +22,7 @@ function load(page){
 function eliminar (id)
 {
 	var q= $("#q").val();
-	if (confirm("Realmente deseas eliminar el ticket?")){	
+	if (confirm("Realmente deseas eliminar el caso?")){	
 		$.ajax({
 			type: "GET",
 			url: "./ajax/tickets.php",

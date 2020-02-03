@@ -35,7 +35,7 @@
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="fa fa-male"></i></span>
                                     <select name="project_id" class="form-control">
-                                    <option value="">PROJECTO</option>
+                                    <option value="">DEPARTAMENTO</option>
                                       <?php foreach($projects as $p):?>
                                         <option value="<?php echo $p['id']; ?>" <?php if(isset($_GET["project_id"]) && $_GET["project_id"]==$p['id']){ echo "selected"; } ?>><?php echo $p['name']; ?></option>
                                       <?php endforeach; ?>
@@ -150,13 +150,13 @@
             <div class="table-responsive">
                 <table class="table table-bordered table-hover">
                     <thead>
-                        <th>Asunto</th>
-                        <th>Proyecto</th>
-                        <th>Tipo</th>
-                        <th>Categoria</th>
-                        <th>Prioridad</th>
-                        <th>Estado</th>
-                        <th>Fecha</th>
+                        <th>Asunto:</th>
+                        <th>Departamento:</th>
+                        <th>Problema:</th>
+                        <th>Operador:</th>
+                        <th>Prioridad:</th>
+                        <th>Estado:</th>
+                        <th>Fecha:</th>
                         <th>Ultima Actualizacion</th>
                     </thead>
             <?php

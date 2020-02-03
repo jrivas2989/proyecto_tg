@@ -60,7 +60,9 @@
 
 <script type="text/javascript" src="js/ticket.js"></script>
 <script type="text/javascript" src="js/VentanaCentrada.js"></script>
+<script src="js/push.min.js"></script>
 <script>
+
 $("#add").submit(function(event) {
   $('#save_data').attr("disabled", true);
   
@@ -97,8 +99,9 @@ $( "#upd" ).submit(function( event ) {
             $("#result2").html(datos);
             $('#upd_data').attr("disabled", false);
             load(1);
-          }
-    });
+         }
+});
+
   event.preventDefault();
 })
 

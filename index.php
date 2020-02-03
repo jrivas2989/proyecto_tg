@@ -38,7 +38,7 @@
             <a class="hiddenanchor" id="signin"></a>
             <div class="login_wrapper">
                 <div class="animate form login_form">
-                    <?php 
+                    <?php
                         $invalid=sha1(md5("contrasena y email invalido"));
                         if (isset($_GET['invalid']) && $_GET['invalid']==$invalid) {
                             echo "<div class='alert alert-danger alert-dismissible fade in' role='alert'>
@@ -65,46 +65,11 @@
                                 <div class="clearfix"></div>
                                 <br />
                                 <div>
-                                    <h1><i class="fa fa-ticket"></i>SisWebReport CPK Inversiones, C.A.</h1>
-                                    
-                                </div>
+                                <h1><i class="fa fa-ticket"></i> SisWebReport CPK Inversiones, C.A.</h1>
+                            </div>
                             </div>
                         </form>
                     </section>
                 </div>
             </div>
         </div>
-<!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://code.jquery.com/jquery-2.1.1.min.js" crossorigin="anonymous"></script>
-    <script>window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')</script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="js/ie10-viewport-bug-workaround.js"></script>
-
-    <script type="text/javascript">
-      function myFunction() {
-        $.ajax({
-          url: "modal/notificaciones.php",
-          type: "POST",
-          processData:false,
-          success: function(data){
-            $("#notification-count").remove();                  
-            $("#notification-latest").show();$("#notification-latest").html(data);
-          },
-          error: function(){}           
-        });
-      }
-                                 
-      $(document).ready(function() {
-        $('body').click(function(e){
-          if ( e.target.id != 'notification-icon'){
-            $("#notification-latest").hide();
-          }
-        });
-      });                                     
-      </script>
-  </body>
-</html>

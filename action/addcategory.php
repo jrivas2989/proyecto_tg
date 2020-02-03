@@ -1,10 +1,10 @@
-<?php	
+<?php
 	session_start();
 
 	if (empty($_POST['name'])) {
            $errors[] = "Nombre vacío";
         } else if (
-			!empty($_POST['name']) 
+			!empty($_POST['name'])
 		){
 
 		include "../config/config.php";//Contiene funcion que conecta a la base de datos
@@ -23,13 +23,13 @@
 		} else {
 			$errors []= "Error desconocido.";
 		}
-		
+
 		if (isset($errors)){
-			
+
 			?>
 			<div class="alert alert-danger" role="alert">
 				<button type="button" class="close" data-dismiss="alert">&times;</button>
-					<strong>Error!</strong> 
+					<strong>Error!</strong>
 					<?php
 						foreach ($errors as $error) {
 								echo $error;
@@ -39,7 +39,7 @@
 			<?php
 			}
 			if (isset($messages)){
-				
+
 				?>
 				<div class="alert alert-success" role="alert">
 						<button type="button" class="close" data-dismiss="alert">&times;</button>
