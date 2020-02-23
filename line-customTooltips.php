@@ -5,7 +5,7 @@ require_once('chartJS/docs/php/connection.php');
 <html>
 
 <head>
-    <title>Barras Graficas por problemas</title>
+    <title>Estadisticas por problemas</title>
     <script src="./chartJs/Chart.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 

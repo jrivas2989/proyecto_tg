@@ -7,7 +7,7 @@
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span>
                     </button>
-                    <h4 class="modal-title" id="myModalLabel">Agregar Usuario</h4>
+                    <h4 class="modal-title" id="myModalLabel">Agregar Usuario:</h4>
                 </div>
                 <div class="modal-body">
                     <form class="form-horizontal form-label-left input_mask" id="add_user" name="add_user">
@@ -38,7 +38,7 @@
                                     <option value="2" >operador</option>
                                     <option value="3" >usuario</option>  
                             </select>
-                        </div>>
+                        </div>
 
                         <div class="form-group">
                             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="password">Contraseña<span class="required">*</span>

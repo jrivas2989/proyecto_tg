@@ -65,7 +65,8 @@
                                 <div class="clearfix"></div>
                                 <br />
                                 <div>
-                                <h1><i class="fa fa-ticket"></i> SisWebReport CPK Inversiones, C.A.</h1>
+                                <img src="logo-1.png" width="150" height="100">
+                                <h3></i> SisWebReport CPK Inversiones, C.A.</h3>
                             </div>
                             </div>
                         </form>

@@ -1,5 +1,5 @@
 
-    <div class="modal fade bs-example-modal-lg-upd" tabindex="-1" role="dialog" aria-hidden="true">
+   <div class="modal fade bs-example-modal-lg-upd" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-md">
             <div class="modal-content">
                 <div class="modal-header">
@@ -24,14 +24,6 @@
                                     <option value="" selected>-- Selecciona estado --</option>
                                     <option value="1" >Activo</option>
                                     <option value="0" >Inactivo</option>  
-                            </select>
-                        </div>
-                        <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
-                            <select class="form-control" required name="rol">
-                                    <option value="" selected>-- Selecciona el rol --</option>
-                                    <option value="1" >administrador</option>
-                                    <option value="2" >operador</option>
-                                    <option value="3" >usuario</option>  
                             </select>
                         </div>
                         <div class="form-group">

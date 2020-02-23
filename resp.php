@@ -23,8 +23,6 @@
 		$zip->addFile($salida_sql); //Agregamos el archivo SQL a ZIP
 		$zip->close(); //Cerramos el ZIP
 		unlink($salida_sql); //Eliminamos el archivo temporal SQL
-		header ("Location: $salida_zip"); // Redireccionamos para descargar el Arcivo ZIP
-		} else {
-		echo 'Error'; //Enviamos el mensaje de error
+	
 	}
 ?>

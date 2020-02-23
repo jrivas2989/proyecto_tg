@@ -2,6 +2,7 @@ $(document).ready(function(){
 	load(1);
 });
 
+// Metodo para buscar...
 function load(page){
 	var q= $("#q").val();
 	$("#loader").fadeIn('slow');

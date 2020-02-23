@@ -14,6 +14,7 @@
 		include "../config/config.php";//Contiene funcion que conecta a la base de datos
 
 		$title = $_POST["title"];
+		$nomclient = $_POST["nombre_cliente"];
 		$description = $_POST["description"];
 		$category_id = $_POST["category_id"];
 		$project_id = $_POST["project_id"];
@@ -26,7 +27,7 @@
 
 		// $user_id=$_SESSION['user_id'];
 
-		$sql="insert into ticket (title,description,category_id,project_id,priority_id,user_id,status_id,site_id,kind_id,created_at) value (\"$title\",\"$description\",\"$category_id\",\"$project_id\",$priority_id,$user_id,$status_id,$site_id,$kind_id,$created_at)";
+		$sql="insert into ticket (title,nombre_cliente,description,category_id,project_id,priority_id,user_id,status_id,site_id,kind_id,created_at) value (\"$title\",\"$nomclient\",\"$description\",\"$category_id\",\"$project_id\",$priority_id,$user_id,$status_id,$site_id,$kind_id,$created_at)";
 
 		$query_new_insert = mysqli_query($con,$sql);
 			if ($query_new_insert){

@@ -92,10 +92,10 @@
             <table class="table table-striped jambo_table bulk_action">
                 <thead>
                     <tr class="headings">
-                        <th class="column-title">Nombre </th>
-                        <th class="column-title">Correo Electrónico </th>
-                        <th class="column-title">Estado </th>
-                        <th class="column-title">Fecha </th>
+                        <th class="column-title">Nombre:</th>
+                        <th class="column-title">Correo Electrónico:</th>
+                        <th class="column-title">Estado:</th>
+                        <th class="column-title">Fecha:</th>
                         <th class="column-title no-link last"><span class="nobr"></span></th>
                     </tr>
                 </thead>
@@ -113,6 +113,7 @@
                     <input type="hidden" value="<?php echo $name;?>" id="name<?php echo $id;?>">
                     <input type="hidden" value="<?php echo $email;?>" id="email<?php echo $id;?>">
                      <input type="hidden" value="<?php echo $status;?>" id="status<?php echo $id;?>">
+                  
 
                     <tr class="even pointer">
                         <td><?php echo $name;?></td>

@@ -28,7 +28,7 @@
                         <!-- form seach -->
                         <form class="form-horizontal" role="form" id="gastos">
                             <div class="form-group row">
-                                <label for="q" class="col-md-2 control-label">Nombre/Asunto</label>
+                                <label for="q" class="col-md-2 control-label">Nombre/Asunto:</label>
                                 <div class="col-md-4">
                                     <input type="text" class="form-control" id="q" placeholder="Nombre del caso" onkeyup='load(1);'>
                                 </div>
@@ -67,7 +67,7 @@ $("#add").submit(function(event) {
   $('#save_data').attr("disabled", true);
   
  var parametros = $(this).serialize();
-     $.ajax({
+      $.ajax({
             type: "POST",
             url: "action/addticket.php",
             data: parametros,
@@ -75,9 +75,21 @@ $("#add").submit(function(event) {
                 $("#result").html("Mensaje: Cargando...");
               },
             success: function(datos){
-            $("#result").html(datos);
-            $('#save_data').attr("disabled", false);
-            load(1);
+                console.log('exitoso')
+                document.getElementById("nombre_cliente").value="";
+                document.getElementById("nombre_cliente").value="";
+                document.getElementById("site_id").value="";
+                document.getElementById("kind_id").value="";
+                document.getElementById("mod_title").value="";
+                document.getElementById("description").value="";
+                document.getElementById("project_id").value="";
+                document.getElementById("category_id").value="";
+                document.getElementById("priority_id").value="";
+                document.getElementById("status_id").value="";
+                $("#result").html(datos);
+                $('#save_data').attr("disabled", false);
+                load(1);
+                console.log('exitoso2')
           }
     });
   event.preventDefault();
@@ -113,6 +125,7 @@ $( "#upd" ).submit(function( event ) {
         var category_id = $("#category_id"+id).val();
         var priority_id = $("#priority_id"+id).val();
         var status_id = $("#status_id"+id).val();
+        var nombre_cliente = $("#nombre_cliente"+id).val();
             $("#mod_id").val(id);
             $("#mod_title").val(title);
             $("#mod_description").val(description);
@@ -122,6 +135,7 @@ $( "#upd" ).submit(function( event ) {
             $("#mod_priority_id").val(priority_id);
             $("#mod_status_id").val(status_id);
             $("#mod_site_id").val(site_id);
+            $("#nombre_cliente").val(nombre_cliente);
         }
 
 </script>

@@ -5,7 +5,6 @@
     $action = (isset($_REQUEST['action']) && $_REQUEST['action'] !=NULL)?$_REQUEST['action']:'';
     if (isset($_GET['id'])){
         $id_del=intval($_GET['id']);
-        $id_del2=intval($_GET['rol']);
         $query=mysqli_query($con, "SELECT * from ticket where id='".$id_del."'");
         $count=mysqli_num_rows($query);
 
@@ -32,10 +31,11 @@
     ?>
 
 <?php
+    //Codigo que realiza la busqueda.
     if($action == 'ajax'){
         // escaping, additionally removing everything that could be (html/javascript-) code
          $q = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q'], ENT_QUOTES)));
-         $aColumns = array('title');//Columnas de busqueda
+         $aColumns = array('title', 'nombre_cliente','description','project_id','category_id','status_id');//Columnas de busqueda
          $sTable = "ticket";
          $sWhere = "";
         if ( $_GET['q'] != "" )
@@ -71,14 +71,15 @@
             <table class="table table-striped jambo_table bulk_action">
                 <thead>
                     <tr class="headings">
+                       
                         <th class="column-title">Asunto: </th>
+                        <th class="column-title">Cliente: </th>
                         <th class="column-title">Departamento: </th>
                         <th class="column-title">Prioridad: </th>
                         <th class="column-title">Estado: </th>
                         <th>Fecha:</th>
                         <th class="column-title">Operador:</th>
                         <th class="column-title">Site:</th>
-                        <th class="column-title">Nom cliente</th>
                         <th class="column-title no-link last"><span class="nobr"></span></th>
                     </tr>
                 </thead>
@@ -89,12 +90,14 @@
                             $created_at=date('d/m/Y', strtotime($r['created_at']));
                             $description=$r['description'];
                             $title=$r['title'];
+                            $cliente=$r['nombre_cliente'];
                             $project_id=$r['project_id'];
                             $priority_id=$r['priority_id'];
                             $status_id=$r['status_id'];
                             $kind_id=$r['kind_id'];
                             $category_id=$r['category_id'];
                             $site_id=$r['site_id'];
+                          
 
 
                             $sql = mysqli_query($con, "select * from project where id=$project_id");
@@ -106,7 +109,6 @@
                             if($c=mysqli_fetch_array($sql)) {
                                 $name_priority=$c['name'];
                             }
-
                             $sql = mysqli_query($con, "select * from status where id=$status_id");
                             if($c=mysqli_fetch_array($sql)) {
                             $name_status=$c['name'];
@@ -120,6 +122,7 @@
                             if($c=mysqli_fetch_array($sql)) {
                             $name_site=$c['name'];
                             }
+                           
 
 
 
@@ -138,10 +141,12 @@
                     <input type="hidden" value="<?php echo $category_id;?>" id="category_id<?php echo $id;?>">
                     <input type="hidden" value="<?php echo $priority_id;?>" id="priority_id<?php echo $id;?>">
                     <input type="hidden" value="<?php echo $site_id;?>" id="$site_id<?php echo $id;?>">
+                    <input type="hidden" value="<?php echo $cliente;?>" id="$nombre_cliente<?php echo $id;?>">
 
 
                         <tr class="even pointer">
                         <td><?php echo $title;?></td>
+                        <td><?php echo $cliente;?></td>
                         <td><?php echo $name_project; ?></td>
                         <td><?php echo $name_priority; ?></td>
                         <td><?php echo $name_status;?></td>
@@ -149,8 +154,8 @@
                        <td><?php echo $name_category;?></td>
                        <td><?php echo $name_site;?></td>
                         <td ><span class="pull-right">
-                        <a href="#" class='btn btn-default' title='Editar' onclick="obtener_datos('<?php echo $id;?>');" data-toggle="modal" data-target=".bs-example-modal-lg-udp"><i class="glyphicon glyphicon-edit"></i></a>
-                        <a href="#" class='btn btn-default' title='Borrar' onclick="eliminar('<?php echo $id; ?>')"><i class="glyphicon glyphicon-trash"></i> </a></span></td>
+                        <a href="#" class='btn btn-default' title='Editar cliente' onclick="obtener_datos('<?php echo $id;?>');" data-toggle="modal" data-target=".bs-example-modal-lg-udp"><i class="glyphicon glyphicon-edit"></i></a>
+                        <a href="#" class='btn btn-default' title='Borrar cliente' onclick="eliminar('<?php echo $id; ?>')"><i class="glyphicon glyphicon-trash"></i> </a></span></td>
                    </tr>
                 <?php
                     } //en while

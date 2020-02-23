@@ -13,22 +13,17 @@
                     <li class="<?php if(isset($active2)){echo $active2;}?>">
                         <a href="tickets.php"><i class="fa fa-ticket"></i> Nuevo caso</a>
                     </li>
-                    <li class="<?php if(isset($active2)){echo $active2;}?>">
-                    <a href="resp.php"><i class="fa fa-desktop"></i>Generar backup de base de datos </a>
+                    <li class="<?php if(isset($active5)){echo $active5;}?>">
+                    <a href="fpdf/index.php" target="_blank"><i class="fa fa-area-chart"></i> Generar Reportes</a>
                     </li>
-                    <li class="<?php if(isset($active5)){echo $active5;}?>">
+                    <li class="<?php if(isset($active2)){echo $active2;}?>">
+                    <a href="backup.php" target="_blank"><i class="fa fa-desktop"></i>Generar backup de base de datos</a>
+                    </li>
                      <li><a><i class="fa fa-bar-chart-o"></i> Estadisticas<span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
+                     <ul class="nav child_menu">
                     <li><a href="reports.php">Estadisticas Procesadas por Usuarios</a></li>
-                    <li><a href="bar.php">Estadisticas Grafica por operadores</a></li>
-                    <li><a href="line-customTooltips.php">Estadisticas Grafica por problemas</a></li>
-                    <li><a><i class="fa fa-desktop"></i>Consultar Tabla Excel<span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                    <li><a href="leer.php">Leer estadisticas excel</a></li>
-                    <li class="<?php if(isset($active5)){echo $active5;}?>">
-                     <li><a><i class="fa fa-bar-chart-o"></i> Reportes<span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                    <li><a href="reports.php">Generar reportes..</a></li>
+                    <li><a target="_blank" href="bar.php">Estadisticas Grafica por operadores</a></li>
+                   <li><a target="_blank" href="line-customTooltips.php">Estadisticas Grafica por problemas en Clientes</a></li>
                     </ul>
                     </li>
                     </ul>

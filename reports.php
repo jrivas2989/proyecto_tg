@@ -7,6 +7,9 @@
     $priorities = mysqli_query($con,  "select * from priority");
     $statuses = mysqli_query($con, "select * from status");
     $kinds = mysqli_query($con, "select * from kind");
+    $nom_cliente = mysqli_query($con, "select * from nombre_cliente");
+  
+    
 ?>  
 
 
@@ -55,6 +58,17 @@
                             </div>
                             <div class="col-lg-3">
                                 <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-support"></i></span>
+                                    <select name="priority_id" class="form-control">
+                                    <option value="">Cliente:</option>
+                                      <?php foreach($nombre_cliente as $p):?>
+                                        <option value="<?php echo $p['nombre_cliente']; ?>" <?php if(isset($_GET["nombre_cliente"]) && $_GET["nombre_cliente"]==$p['nombre_cliente']){ echo "selected"; } ?>><?php echo $p['nombre_cliente']; ?></option>
+                                      <?php endforeach; ?>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="input-group">
                                   <span class="input-group-addon">INICIO</span>
                                   <input type="date" name="start_at" value="<?php if(isset($_GET["start_at"]) && $_GET["start_at"]!=""){ echo $_GET["start_at"]; } ?>" class="form-control" placeholder="Palabra clave">
                                 </div>
@@ -95,52 +109,61 @@
                         <!-- end form search -->
 
                          <?php
-                                        $users= array();
-                                        if((isset($_GET["status_id"]) && isset($_GET["kind_id"]) && isset($_GET["project_id"]) && isset($_GET["priority_id"]) && isset($_GET["start_at"]) && isset($_GET["finish_at"]) ) && ($_GET["status_id"]!="" ||$_GET["kind_id"]!="" || $_GET["project_id"]!="" || $_GET["priority_id"]!="" || ($_GET["start_at"]!="" && $_GET["finish_at"]!="") ) ) {
-                                        $sql = "select * from ticket where ";
-                                        if($_GET["status_id"]!=""){
-                                            $sql .= " status_id = ".$_GET["status_id"];
-                                        }
+                                $users= array();
+                                if((isset($_GET["status_id"]) && isset($_GET["kind_id"]) && isset($_GET["nombre_cliente"]) && isset($_GET["project_id"]) && isset($_GET["priority_id"]) && isset($_GET["start_at"]) && isset($_GET["finish_at"]) ) && ($_GET["status_id"]!="" ||$_GET["kind_id"]!="" || $_GET["project_id"]!="" || $_GET["priority_id"]!="" || ($_GET["start_at"]!="" && $_GET["finish_at"]!="") ) ) {
+                                $sql = "select * from ticket where ";
+                                if($_GET["status_id"]!=""){
+                                    $sql .= " status_id = ".$_GET["status_id"];
+                                }
 
-                                        if($_GET["kind_id"]!=""){
-                                        if($_GET["status_id"]!=""){
-                                            $sql .= " and ";
-                                        }
-                                            $sql .= " kind_id = ".$_GET["kind_id"];
-                                        }
-
-
-                                        if($_GET["project_id"]!=""){
-                                        if($_GET["status_id"]!=""||$_GET["kind_id"]!=""){
-                                            $sql .= " and ";
-                                        }
-                                            $sql .= " project_id = ".$_GET["project_id"];
-                                        }
-
-                                        if($_GET["priority_id"]!=""){
-                                        if($_GET["status_id"]!=""||$_GET["project_id"]!=""||$_GET["kind_id"]!=""){
-                                            $sql .= " and ";
-                                        }
-
-                                            $sql .= " priority_id = ".$_GET["priority_id"];
-                                        }
+                                if($_GET["kind_id"]!=""){
+                                if($_GET["status_id"]!=""){
+                                    $sql .= " and ";
+                                }
+                                    $sql .= " kind_id = ".$_GET["kind_id"];
+                                }
 
 
+                                if($_GET["project_id"]!=""){
+                                if($_GET["status_id"]!=""||$_GET["kind_id"]!=""){
+                                    $sql .= " and ";
+                                }
+                                    $sql .= " project_id = ".$_GET["project_id"];
+                                }
 
-                                        if($_GET["start_at"]!="" && $_GET["finish_at"]){
-                                        if($_GET["status_id"]!=""||$_GET["project_id"]!="" ||$_GET["priority_id"]!="" ||$_GET["kind_id"]!="" ){
-                                            $sql .= " and ";
-                                        }
+                                if($_GET["priority_id"]!=""){
+                                if($_GET["status_id"]!=""||$_GET["project_id"]!=""||$_GET["kind_id"]!=""){
+                                    $sql .= " and ";
+                                }
 
-                                            $sql .= " ( date_at >= \"".$_GET["start_at"]."\" and date_at <= \"".$_GET["finish_at"]."\" ) ";
-                                        }
+                                    $sql .= " priority_id = ".$_GET["priority_id"];
+                                }
 
-                                                $users = mysqli_query($con, $sql);
+                                if($_GET["nombre_cliente"]!=""){
+                                    if($_GET["status_id"]!=""||$_GET["project_id"]!=""||$_GET["kind_id"]!=""){
+                                        $sql .= " and ";
+                                    }
 
-                                        }else{
-                                                $users = mysqli_query($con, "select * from ticket order by created_at desc");
+                                        $sql .= " nombre_cliente = ".$_GET["nombre_cliente"];
+                                    }
 
-                                        }
+
+
+
+                                if($_GET["start_at"]!="" && $_GET["finish_at"]){
+                                if($_GET["status_id"]!=""||$_GET["project_id"]!="" ||$_GET["priority_id"]!="" ||$_GET["kind_id"]!="" ){
+                                    $sql .= " and ";
+                                }
+
+                                    $sql .= " ( date_at >= \"".$_GET["start_at"]."\" and date_at <= \"".$_GET["finish_at"]."\" ) ";
+                                }
+
+                                        $users = mysqli_query($con, $sql);
+
+                                }else{
+                                        $users = mysqli_query($con, "select * from ticket order by created_at desc");
+
+                                }
 
                             if(@mysqli_num_rows($users)>0){
                                 // si hay reportes
@@ -151,60 +174,62 @@
                 <table class="table table-bordered table-hover">
                     <thead>
                         <th>Asunto:</th>
+                        <th>Cliente:</th>
                         <th>Departamento:</th>
                         <th>Problema:</th>
                         <th>Operador:</th>
                         <th>Prioridad:</th>
                         <th>Estado:</th>
                         <th>Fecha:</th>
-                        <th>Ultima Actualizacion</th>
-                    </thead>
+                        <th>Ultima Actualizacion:</th>  
+                        </thead>
             <?php
-            $total = 0;
-            foreach($users as $user){
-                $project_id=$user['project_id'];
-                $priority_id=$user['priority_id'];
-                $kind_id=$user['kind_id'];
-                $category_id=$user['category_id'];
-                $status_id=$user['status_id'];
+                $total = 0;
+                foreach($users as $user){
+                    $project_id=$user['project_id'];
+                    $priority_id=$user['priority_id'];
+                    $kind_id=$user['kind_id'];
+                    $category_id=$user['category_id'];
+                    $status_id=$user['status_id'];
+                    $nombre_cliente=$user['nombre_cliente'];
 
-                $status=mysqli_query($con, "select * from status where id=$status_id");
-                $category=mysqli_query($con, "select * from category where id=$category_id");
-                $kinds = mysqli_query($con,"select * from kind where id=$kind_id");
-                $project  = mysqli_query($con, "select * from project where id=$project_id");
-                $medic = mysqli_query($con,"select * from priority where id=$priority_id");
+                    $status=mysqli_query($con, "select * from status where id=$status_id");
+                    $category=mysqli_query($con, "select * from category where id=$category_id");
+                    $kinds = mysqli_query($con,"select * from kind where id=$kind_id");
+                    $project  = mysqli_query($con, "select * from project where id=$project_id");
+                    $medic = mysqli_query($con,"select * from priority where id=$priority_id");
+                    $nombre_cliente =mysqli_query($con, "select * from ticket where $nombre_cliente");
 
                 
-                ?>
-                <tr>
-                <td><?php echo $user['title'] ?></td>
-                <?php foreach($project as $pro){?>
-                <td><?php echo $pro['name'] ?></td>
-                <?php } ?>
-                <?php foreach($kinds as $kind){?>
-                <td><?php echo $kind['name'] ?></td>
-                <?php } ?>
-                <?php foreach($category as $cat){?>
-                <td><?php echo $cat['name']; ?></td>
-                <?php } ?>
-                 <?php foreach($medic as $medics){?>
-                <td><?php echo $medics['name']; ?></td>
-                <?php } ?>
-                <?php foreach($status as $stat){?>
-                <td><?php echo $stat['name']; ?></td>
-                 <?php } ?>
-                <td><?php echo $user['created_at']; ?></td>
-                <td><?php echo $user['updated_at']; ?></td>
-                </tr>
-             <?php  
-                
+                    ?>
+                    <tr>
+                        <td><?php echo $user['title'] ?></td>
+                        <?php foreach($project as $pro){ ?>
+                        <td><?php echo $user['nombre_cliente']; ?></td>
+                        <td><?php echo $pro['name'] ?></td>
+                        <?php } ?>
+                        <?php foreach($kinds as $kind){?>
+                        <td><?php echo $kind['name'] ?></td>
+                        <?php } ?>
+                        <?php foreach($category as $cat){?>
+                        <td><?php echo $cat['name']; ?></td>
+                        <?php } ?>
+                        <?php foreach($medic as $medics){?>
+                        <td><?php echo $medics['name']; ?></td>
+                        <?php } ?>
+                        <?php foreach($status as $stat){?>
+                        <td><?php echo $stat['name']; ?></td>
+                        <?php } ?>
+                        <td><?php echo $user['created_at']; ?></td>
+                        <td><?php echo $user['updated_at']; ?></td>
+                    </tr>
+            <?php
                 }
-
               ?>   
        <?php
 
         }else{
-            echo "<p class='alert alert-danger'>No hay tickets</p>";
+            echo "<p class='alert alert-danger'>No hay casos procesados</p>";
         }
 
 

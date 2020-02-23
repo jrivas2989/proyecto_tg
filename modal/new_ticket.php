@@ -6,7 +6,7 @@
     $kinds =mysqli_query($con, "select * from kind");
     $categories =mysqli_query($con, "select * from category");
     $sites =mysqli_query($con, "select * from site");
-    $nom =mysqli_query($con, "select * from nomclient");
+  
     
   
 
@@ -29,14 +29,14 @@
                         <div class="form-group">
                             <label class="control-label col-md-3 col-sm-3 col-xs-12">Nombre del cliente:<span class="required">*</span></label>
                             <div class="col-md-9 col-sm-9 col-xs-12">
-                              <input type="text" name="title" class="form-control" placeholder="Ingrese aqui" >
+                              <input type="text" name="nombre_cliente" id="nombre_cliente" class="form-control" placeholder="Ingrese aqui" >
                             </div>
                         </div>
                          <div class="form-group">
-                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Site:
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Site:<span class="required">*</span></label>
                              </label>
                             <div class="col-md-9 col-sm-9 col-xs-12">
-                                <select class="form-control" name="site_id" >
+                                <select class="form-control" name="site_id" id="site_id" >
                                     <option selected="" value="">-- Selecciona --</option>
                                       <?php foreach($sites as $s):?>
                                         <option value="<?php echo $s['id']; ?>"><?php echo $s['name']; ?></option>
@@ -45,10 +45,10 @@
                             </div>
                         </div>
                           <div class="form-group">
-                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Problema
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Problema: <span class="required">*</span></label>
                             </label>
                             <div class="col-md-9 col-sm-9 col-xs-12">
-                                <select class="form-control" name="kind_id" >
+                                <select class="form-control" name="kind_id" id="kind_id" >
                                       <?php foreach($kinds as $p):?>
                                         <option value="<?php echo $p['id']; ?>"><?php echo $p['name']; ?></option>
                                       <?php endforeach; ?>
@@ -58,21 +58,21 @@
                         <div class="form-group">
                             <label class="control-label col-md-3 col-sm-3 col-xs-12">Titulo:<span class="required">*</span></label>
                             <div class="col-md-9 col-sm-9 col-xs-12">
-                              <input type="text" name="title" class="form-control" placeholder="Titulo" >
+                              <input type="text" name="title" class="form-control" placeholder="Titulo" id="mod_title" required>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-md-3 col-sm-3 col-xs-12">Descripción: <span class="required">*</span>
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12">Descripción:<span class="required">*</span>
                             </label>
                             <div class="col-md-9 col-sm-9 col-xs-12">
-                              <textarea name="description" class="form-control col-md-7 col-xs-12"  placeholder="Descripción"></textarea>
+                              <textarea name="description" id="description" class="form-control col-md-7 col-xs-12"  placeholder="Descripción"></textarea>
                             </div>
                         </div>
                         <div class="form-group">
-                           <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Departamento:
+                           <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Departamento:<span class="required">*</span></label>
                             </label> 
                             <div class="col-md-9 col-sm-9 col-xs-12">
-                                <select class="form-control" name="project_id" >
+                                <select class="form-control" name="project_id" id="project_id">
                                     <option selected="" value="">-- Selecciona --</option>
                                       <?php foreach($projects as $p):?>
                                         <option value="<?php echo $p['id']; ?>"><?php echo $p['name']; ?></option>
@@ -81,10 +81,10 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Operador:
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Operador:<span class="required">*</span></label>
                             </label>
                             <div class="col-md-9 col-sm-9 col-xs-12">
-                                <select class="form-control" name="category_id" >
+                                <select class="form-control" name="category_id" id="category_id">
                                     <option selected="" value="">-- Selecciona --</option>
                                       <?php foreach($categories as $p):?>
                                         <option value="<?php echo $p['id']; ?>"><?php echo $p['name']; ?></option>
@@ -93,10 +93,10 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Prioridad:
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Prioridad:<span class="required">*</span></label>
                             </label>
                             <div class="col-md-9 col-sm-9 col-xs-12">
-                                <select class="form-control" name="priority_id" >
+                                <select class="form-control" name="priority_id" id="priority_id">
                                     <option selected="" value="">-- Selecciona --</option>
                                   <?php foreach($priorities as $p):?>
                                     <option value="<?php echo $p['id']; ?>"><?php echo $p['name']; ?></option>
@@ -105,10 +105,10 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Estado:
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Estado:<span class="required">*</span></label>
                             </label>
                             <div class="col-md-9 col-sm-9 col-xs-12">
-                                <select class="form-control" name="status_id" >
+                                <select class="form-control" name="status_id" id="status_id">
                                     <option selected="" value="">-- Selecciona --</option>
                                   <?php foreach($statuses as $p):?>
                                     <option value="<?php echo $p['id']; ?>"><?php echo $p['name']; ?></option>

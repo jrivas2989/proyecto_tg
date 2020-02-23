@@ -17,7 +17,7 @@ require_once('../docs/php/connection.php');
 	var randomScalingFactor = function(){ return Math.round(Math.random()*100)};
 
 	var barChartData = {
-		labels : [
+		labels : "My First dataset", [
         <?php
         $sql = "SELECT * FROM idoper";
         $result = mysqli_query($connection,$sql); 

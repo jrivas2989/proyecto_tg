@@ -81,6 +81,7 @@ $( "#upd_user" ).submit(function( event ) {
   $('#upd_data').attr("disabled", true);
   
  var parametros = $(this).serialize();
+
      $.ajax({
             type: "POST",
             url: "action/upd_user.php",
@@ -97,15 +98,13 @@ $( "#upd_user" ).submit(function( event ) {
   event.preventDefault();
 })
 
-    function obtener_datos(id){
+function obtener_datos(id){
             var name = $("#name"+id).val();
             var email = $("#email"+id).val();
             var status = $("#status"+id).val();
-            var rol = $("#rol"+idrol).val();
             $("#mod_id").val(id);
             $("#mod_name").val(name);
             $("#mod_email").val(email);
             $("#mod_status").val(status);
-            $("#mod_rol").val(rol);
         }
 </script>

@@ -5,7 +5,7 @@
     $kinds =mysqli_query($con, "select * from kind");
     $categories =mysqli_query($con, "select * from category");
     $site =mysqli_query($con, "select * from site");
-    $nom =mysqli_query($con, "select * from nomclient");
+
 ?>
     <!-- Modal -->
     <div class="modal fade bs-example-modal-lg-udp" tabindex="-1" role="dialog" aria-hidden="true">
@@ -21,7 +21,25 @@
                         <div id="result2"></div>
                         <input type="hidden" name="mod_id" id="mod_id">
                         <div class="form-group">
-                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Tipo de problema
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12">Nombre del cliente:<span class="required">*</span></label>
+                            <div class="col-md-9 col-sm-9 col-xs-12">
+                              <input type="text" name="nombre_cliente" id="nombre_cliente" class="form-control" placeholder="Ingrese aqui" >
+                            </div>
+                        </div>
+                        <div class="form-group">
+                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Site:
+                            </label> 
+                            <div class="col-md-9 col-sm-9 col-xs-12">
+                                <select class="form-control" name="site_id" >
+                                    <option selected="" value="">-- Selecciona --</option>
+                                      <?php foreach($site as $p):?>
+                                        <option value="<?php echo $p['id']; ?>"><?php echo $p['name']; ?></option>
+                                      <?php endforeach; ?>
+                                </select>
+                            </div>
+                        </div>
+                         <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Problema:<span class="required">*</span></label>
                             </label>
                             <div class="col-md-9 col-sm-9 col-xs-12">
                                 <select class="form-control" name="kind_id" required id="mod_kind_id">
@@ -38,26 +56,26 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-md-3 col-sm-3 col-xs-12">Descripción <span class="required">*</span>
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12">Descripción:<span class="required">*</span>
                             </label>
                             <div class="col-md-9 col-sm-9 col-xs-12">
                               <textarea name="description" id="mod_description" class="form-control col-md-7 col-xs-12" required></textarea>
                             </div>
                         </div>
-                         <div class="form-group">
-                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Site:
+                        <div class="form-group">
+                           <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Departamento:<span class="required">*</span>
                             </label> 
                             <div class="col-md-9 col-sm-9 col-xs-12">
-                                <select class="form-control" name="site_id" >
+                                <select class="form-control" name="project_id" >
                                     <option selected="" value="">-- Selecciona --</option>
-                                      <?php foreach($site as $p):?>
+                                      <?php foreach($projects as $p):?>
                                         <option value="<?php echo $p['id']; ?>"><?php echo $p['name']; ?></option>
                                       <?php endforeach; ?>
                                 </select>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Operador
+                         <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Operador:<span class="required">*</span>
                             </label>
                             <div class="col-md-9 col-sm-9 col-xs-12">
                                 <select class="form-control" name="category_id" required id="mod_category_id">
@@ -69,7 +87,7 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Prioridad
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Prioridad:<span class="required">*</span>
                             </label>
                             <div class="col-md-9 col-sm-9 col-xs-12">
                                 <select class="form-control" name="priority_id" required id="mod_priority_id">
@@ -81,7 +99,7 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Estado
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Estado:<span class="required">*</span>
                             </label>
                             <div class="col-md-9 col-sm-9 col-xs-12">
                                 <select  class="form-control" name="status_id" required id="mod_status_id">

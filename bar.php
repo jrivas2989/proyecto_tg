@@ -4,7 +4,7 @@ require_once('chartJS/docs/php/connection.php');
 <!doctype html>
 <html>
 	<head>
-		<title>EstadisticasBarras</title>
+		<title>Estadisticas por Operadores</title>
 		<script src="chartJS/Chart.js"></script><!--TODO no le estas llegando a este archivo, así como lo estas llamando...-->
 		<!--Parece que estuviera en la carpeta proyectosistemav4-->
 		<!--Posiblemente sea ese el error que está mostrando la consola de del Chrome con respecto al JavaScript-->

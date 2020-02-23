@@ -1,5 +1,34 @@
-<!-- content -->
-<br><br>
+<?php 
+    $title ="Dashboard - "; 
+    include "head.php";
+    include "sidebar.php";
+
+    $TicketData=mysqli_query($con, "select * from ticket where status_id=1");
+    $ProjectData=mysqli_query($con, "select * from project");
+    $CategoryData=mysqli_query($con, "select * from category");
+    $UserData=mysqli_query($con, "select * from user order by created_at desc");
+?>
+<div class="right_col" role="main"> <!-- page content -->
+        <div class="">
+            <div class="page-title">
+                <div class="row top_tiles"></div>
+                    <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                        <div class="tile-stats">
+                          <div class="icon"><i class="fa fa-users"></i></div>
+                          <div class="count"><?php echo mysqli_num_rows($UserData) ?></div>
+                          <h3>Usuarios en Linea:</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                        <div class="tile-stats">
+                          <div class="icon"><i class="fa fa-ticket"></i></div>
+                          <div class="count"><?php echo mysqli_num_rows($TicketData) ?></div>
+                          <h3>Casos Pendientes</h3>
+                        </div>
+                    </div>
+                <!-- content -->
+                <br><br>
                 <div class="row">
                     <div class="col-md-4">
                         <div class="image view view-first">
@@ -18,12 +47,8 @@
                         ?>    
                         <div class="x_panel">
                             <div class="x_title">
-                                <h2>Informacion personal</h2>
+                                <h2>Informacion personal:</h2>
                                 <ul class="nav navbar-right panel_toolbox">
-                                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                                    </li>
-                                    <li><a class="close-link"><i class="fa fa-close"></i></a>
-                                    </li>
                                 </ul>
                             <div class="clearfix"></div>
                             </div>
@@ -31,14 +56,14 @@
                                 <br />
                                 <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left" action="action/upd_profile.php" method="post">
                                     <div class="form-group">
-                                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Nombre
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Nombre:
                                         </label>
                                         <div class="col-md-6 col-sm-6 col-xs-12">
                                             <input type="text" name="name" id="first-name" class="form-control col-md-7 col-xs-12" value="<?php echo $name; ?>">
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Correo electronico 
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Correo electronico:
                                         </label>
                                         <div class="col-md-6 col-sm-6 col-xs-12">
                                             <input type="text" id="last-name" name="email" class="form-control col-md-7 col-xs-12" value="<?php echo $email; ?>">
@@ -46,24 +71,24 @@
                                     </div>
 
                                     <br><br><br>
-                                    <h2 style="padding-left: 50px">Cambiar Contraseña</h2>
+                                    <h2 style="padding-left: 50px">Cambiar Contraseña:</h2>
                             
                                     <div class="form-group">
-                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Contraseña antigua
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Contraseña antigua:
                                         </label>
                                         <div class="col-md-6 col-sm-6 col-xs-12">
                                             <input id="birthday" name="password" class="date-picker form-control col-md-7 col-xs-12" type="text" placeholder="**********">
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Nueva contraseña 
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Nueva contraseña: 
                                         </label>
                                         <div class="col-md-6 col-sm-6 col-xs-12">
                                             <input id="birthday" name="new_password" class="date-picker form-control col-md-7 col-xs-12" type="text">
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Confirmar contraseña nueva
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Confirmar contraseña nueva:
                                         </label>
                                         <div class="col-md-6 col-sm-6 col-xs-12">
                                       <input id="birthday" name="confirm_new_password" class="date-picker form-control col-md-7 col-xs-12" type="text">
@@ -83,3 +108,24 @@
             </div>
         </div>
     </div><!-- /page content -->
+
+<?php include "footer.php" ?>
+<script>
+    $(function(){
+        $("input[name='file']").on("change", function(){
+            var formData = new FormData($("#formulario")[0]);
+            var ruta = "action/upload-profile.php";
+            $.ajax({
+                url: ruta,
+                type: "POST",
+                data: formData,
+                contentType: false,
+                processData: false,
+                success: function(datos)
+                {
+                    $("#respuesta").html(datos);
+                }
+            });
+        });
+    });
+</script>
